@@ -1,4 +1,5 @@
 @import 'normalize.css';
+@page { size: 21cm 29.7cm; margin: 1cm }
 
 
 :root {
@@ -399,4 +400,12 @@ section {
   font-style: italic;
   padding: 2rem 0;
   text-align: center;
+}
+
+/** PAGE FOOTER */
+
+.page_footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top:5px;
 }
