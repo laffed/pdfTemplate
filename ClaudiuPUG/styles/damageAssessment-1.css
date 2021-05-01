@@ -1,5 +1,5 @@
-@import 'normalize.css';
-@page { size: 21cm 29.7cm; margin: 1cm }
+@import '../node_modules/normalize.css/normalize.css';
+@page { size: 21cm 29.7cm;}
 
 
 :root {
@@ -9,10 +9,16 @@
   --textSizeForm: 9pt;
 
   --borderBottomSmall: 1px solid #000;
+
+  --paddingTop: 5px;
 }
 
-* { box-sizing: border-box; padding:0; margin:0; }
 
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding:0;
+}
 
 
 body { font-family: Arial, Helvetica, sans-serif;}
@@ -23,7 +29,7 @@ body { font-family: Arial, Helvetica, sans-serif;}
 .page { 
   display: flex;
   flex-direction: column;
-  width:calc(210mm + 40px);
+  width: 23cm;
   margin: 0 auto;
 
 }
@@ -112,6 +118,11 @@ section {
   padding-left: 5px;
   padding-right: 2px;
 }
+
+.paddingTop {
+  padding-top: var(--paddingTop);
+}
+
 
 /** ROW 1 */
 .row-1 {
@@ -398,7 +409,7 @@ section {
 
 .row-20 {
   font-style: italic;
-  padding: 2rem 0;
+  padding: 20px 0;
   text-align: center;
 }
 
@@ -406,6 +417,7 @@ section {
 
 .page_footer {
   display: flex;
+  font-size: var(--textSizeForm);
   justify-content: space-between;
   margin-top:5px;
 }
