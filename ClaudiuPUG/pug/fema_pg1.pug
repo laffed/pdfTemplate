@@ -247,10 +247,13 @@ html(lang="en")
         div(class="gridThirdBox__row2-leftColumn")
           div(class="inline-flex")
             p Advance payment requested?
-            input(type="checkbox")
-            span Yes
-            input(type="checkbox")
-            span No
+            span
+              input(type="checkbox")
+              span Yes
+
+            span
+              input(type="checkbox")
+              span No
 
           em If yes, submit Proof of Loss for (FF 086-0-9) for amount of payment and supporting documentation with this report.
 
@@ -384,75 +387,179 @@ html(lang="en")
           div(class="gridFourthBox3__rightColumn-Grid")
             div
               p Number of floors in the building including basement/crawl space:
-              input(type="checkbox")
-              p 1
-              input(type="checkbox")
-              p 2
-              input(type="checkbox")
-              p 3 (or more)
+
+              span
+                input(type="checkbox")
+                p 1
+
+              span
+                input(type="checkbox")
+                p 2
+
+              span
+                input(type="checkbox")
+                p 3 (or more)
             
             div
               p Is building a split level?
 
-              input(type="checkbox")
-              p Yes
-              input(type="checkbox")
-              p No
+              span
+                input(type="checkbox")
+                p Yes
+              
+              span
+                input(type="checkbox")
+                p No
 
             div
               p In case of multiple occupancy, indicate floor(s) occupied by insured:
              
-              input(type="checkbox")
-              p Basement
+              span
+                input(type="checkbox")
+                p Basement
 
-              input(type="checkbox")
-              p First
+              span
+                input(type="checkbox")
+                p First
 
-              input(type="checkbox")
-              p Second and/or above
+              span
+                input(type="checkbox")
+                p Second and/or above
 
           div(class="gridFourthBox4__rightColumn-Grid")
             div
               p Type of basement:
 
-              input(type="checkbox")
-              p None
+              span
+                input(type="checkbox")
+                p None
 
-              input(type="checkbox")
-              p Unfinished
+              span
+                input(type="checkbox")
+                p Unfinished
 
-              input(type="checkbox")
-              p Finished
+              span
+                input(type="checkbox")
+                p Finished
 
               p Is basement flood-proofed?
 
-              input(type="checkbox")
-              p Yes
+              span
+                input(type="checkbox")
+                p Yes
               
-              input(type="checkbox")
-              p No
+              span
+                input(type="checkbox")
+                p No
 
           div(class="gridFourthBox4__rightColumn-Grid")
             div
               p Building elevated?
               
-              input(type="checkbox")
-              p Yes
+              span
+                input(type="checkbox")
+                p Yes
+
+              span
+                input(type="checkbox")
+                p No
+
+              span
+                p Foundation area enclosure?
               
-              input(type="checkbox")
-              p No
+              span
+                input(type="checkbox")
+                p None
               
-              input(type="checkbox")
-              p Foundation area enclosure?
+              span
+                input(type="checkbox")
+                p Breakaway walls
               
-              input(type="checkbox")
-              p None
+              span
+                input(type="checkbox")
+                p Unfinished
               
-              input(type="checkbox")
-              p Breakaway walls
+              p
+                input(type="checkbox")
+                p Finished
+
+          div(class="gridFourthBoxLAST__rightColumn-Grid")
+            div(class="gridFourthBoxLAST-col-left")
+              div
+                p Is Risk under construction?
+
+                span
+                  input(type="checkbox")
+                  p Yes
+
+                span
+                  input(type="checkbox")
+                  p No
+
+              div
+                div 
+                  p Date of Construction:
+                  input(type="text")
               
-              input(type="checkbox")
-              p Unfinished
-              
-              input(type="checkbox")
-              p Finished
+              div
+                div
+                  p FIRM Date:
+                  input(type="text")
+
+                  span
+                    input(type="checkbox")
+                    p Pre-Firm
+
+                  span
+                    input(type="checkbox")
+                    p Post-Firm
+            
+            div(class="gridFourthBoxLAST-col-right")
+              div
+                p PRIOR CONDITION OF:
+
+              div
+                p Building:
+
+                div
+                  input(type="checkbox")
+                  p  Poor
+
+                div
+                  input(type="checkbox")
+                  p  Fair
+
+                div
+                  input(type="checkbox")
+                  p  Good
+
+                div
+                  input(type="checkbox")
+                  p  Very Good
+
+              div
+                p Contents
+
+                div
+                  input(type="checkbox")
+                  p  Poor
+
+                div
+                  input(type="checkbox")
+                  p  Fair
+
+                div
+                  input(type="checkbox")
+                  p  Good
+
+                div
+                  input(type="checkbox")
+                  p  Very Good
+
+
+      div(class="footer")
+        em See Page 3 for Privacy Act Statement and Paperwork Burden Disclosure Notice
+
+      div(class="footer-page")
+        p FEMA FORM 086-0-13 (04/17)
+        p Page 1 of 3
