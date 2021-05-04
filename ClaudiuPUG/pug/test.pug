@@ -4,8 +4,361 @@ html(lang="en")
     meta(charset="UTF-8")
     meta(http-equiv="X-UA-Compatible" content="IE=edge")
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
-    link(rel="stylesheet" type="text/css" href='../styles/damageAssessment-1.css')
     title Preliminary Damage Assessment
+    style.
+      :root { --bigFont: 12pt; --mediumFont: 10pt; --smallFont: 8pt; --textSizeForm: 9pt; --borderBottomSmall: 1px solid #000; --paddingTop: 5px; }
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding:0; }
+      .inputPlaceholder { display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-left: 5px; margin-right: 5px; text-decoration: underline; }
+      body { font-family: Arial, Helvetica, sans-serif;}
+      .page { display: flex; flex-direction: column; width: 23cm; margin: 0 auto; line-height: 2; }
+      .page__header { display: grid; grid-template-columns: 3fr 1fr; justify-items: center; text-align: center; line-height: 1.2; }
+      .page__header-title--small {font-size:var(--mediumFont)}
+      .page__header-title--medium {font-size:var(--bigFont)}
+      .page__header-title-h1 { font-size: var(--bigFont); }
+      .page__header-info {
+        font-size: var(--smallFont);
+        justify-self: end;
+        align-self: end;
+        text-align: right;
+        }
+      @page { margin-top: 0.75in; margin-bottom: 0.75in; margin-left: 0.75in; margin-right: 0.75in; }
+      .table-grid {
+        display: grid;
+        align-items: center;
+        font-size: var(--textSizeForm);
+        border: 2px solid #000;
+        }
+
+      .row-4__row-1, .row-4__row-2,
+      .row-5__row-1, .row-5__row-2,
+      .row-6__row-1, .row-7__row-1,
+      .row-10__row-1, .row-10__row-2,
+      .row-11__row-1, .row-11__row-2,
+      .row-12__row-1, .row-13__row-1,
+      .row-16__row-1, .row-16__row-2,
+      .row-17__row-1, .row-17__row-2,
+      .row-18__row-1, .row-19__row-1  {
+        border-right: 1px solid black;
+        }
+
+      .row-1 > div, .row-2 > div,
+      .row-3 > div, .row-4 > div,
+      .row-5 > div, .row-6 > div,
+      .row-7 > div, .row-8 > div,
+      .row-9 > div, .row-10 > div,
+      .row-11 > div, .row-12 > div,
+      .row-13 > div, .row-14 > div,
+      .row-15 > div, .row-16 > div,
+      .row-17 > div, .row-18 > div,
+      .row-19 > div
+      {
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-left: 5px;
+      }
+
+
+      .row-1 {
+        display: grid;
+        grid-template-columns: 50% 30% 20%;
+
+        border-bottom: 1px solid black;
+      }
+
+      .row-1-col-1 {
+        display: grid;
+        grid-template-columns: max-content 1fr;
+        align-items: center;
+      }
+
+      .row-1-col-2 {
+        display: grid;
+        grid-template-columns: max-content 150px;
+        align-items: center;
+      }
+      .row-1-col-3 {
+        display: grid;
+        grid-template-columns: max-content 80px;
+        align-items: center;
+      }
+
+      .row-2 {
+        grid-row: 2 / 3; 
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+
+        border-bottom: 1px solid black;
+      }
+
+      .row-2-col-1 {
+        display: grid;
+        grid-template-columns: max-content 1fr;
+        align-items: center;
+      }
+
+      .row-3 {
+        grid-row: 3 / span 3; 
+        display: grid;
+        grid-template-rows: repeat(3, max-content);
+
+        border-bottom: 1px solid black;
+      }
+
+      .row-3__row-2 {
+        display: grid;
+        grid-template-columns: max-content 1fr;
+        align-items: center;
+      }
+
+      .row-3__row-3 {
+        display: grid;
+        grid-template-columns: max-content 3fr repeat(2, max-content 1fr);
+        align-items: center;
+      }
+
+      .row-4 {
+        grid-row: 6 / span 2; 
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+
+        border-bottom: 1px solid black;
+      }
+
+
+      .row-4__row-3-2 {
+        display: grid;
+        grid-template-columns: max-content 1fr;
+        align-items: center;
+      }
+
+
+      .row-5 {
+        grid-row: 8 / span 2; 
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .row-5__row-1-2 {
+        display: grid;
+        grid-template-columns: max-content 1fr;
+        align-items: center;
+      }
+
+
+      .row-6 {
+        grid-row: 10 / 11; 
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        border-top:1px solid black;
+        border-bottom: 1px solid black;
+      }
+
+      .row-6__row-1 {
+        display: grid;
+        grid-template-columns: max-content 1fr;
+        align-items: center;
+      }
+
+
+      .row-7 {
+        grid-row: 11 / span 2; 
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .row-7__row-2 {
+        display: grid;
+        grid-template-columns: max-content 1fr;
+        align-items: center;
+      }
+
+
+      .row-8 {
+        grid-row: 13 / 14; 
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+
+        border-bottom: 1px solid black;
+        border-top: 1px solid black;
+      }
+
+      .row-8__row-1 {
+        display: grid;
+        grid-template-columns: max-content 1fr;
+        align-items: center;
+      }
+
+
+      .row-9 {
+        grid-row: 14 / span 3; 
+        display: grid;
+        grid-template-rows: repeat(3, max-content);
+
+        border-bottom: 1px solid black;
+      }
+
+      .row-9__row-2 {
+        display: grid;
+        grid-template-columns: max-content 1fr;
+        align-items: center;
+      }
+
+      .row-9__row-3 {
+        display: grid;
+        grid-template-columns: max-content 3fr repeat(2, max-content 1fr);
+        align-items: center;
+      }
+
+      .row-10 {
+        grid-row: 17 / span 2; 
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+
+        border-bottom: 1px solid black;
+      }
+
+      .row-10__row-3-2 {
+        display: grid;
+        grid-template-columns: max-content 1fr;
+        align-items: center;
+      }
+
+
+      .row-11 {
+        grid-row: 19 / span 2; 
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+
+        border-bottom: 1px solid black;
+      }
+      .row-11__row-1-2 {
+        display: grid;
+        grid-template-columns: max-content 1fr;
+        align-items: center;
+      }
+
+      .row-12 {
+        grid-row: 21 / 22; 
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .row-12__row-1 {
+        display: grid;
+        grid-template-columns: max-content 1fr;
+        align-items: center;
+      }
+
+
+      .row-13 {
+        grid-row: 22 / span 2; 
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        border-top:1px solid black;
+        border-bottom: 1px solid black;
+      }
+
+      .row-13__row-2 {
+        display: grid;
+        grid-template-columns: max-content 1fr;
+        align-items: center;
+      }
+
+      .row-14 {
+        grid-row: 24 / 25; 
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+
+        border-bottom: 1px solid black;
+      }
+
+      .row-14-col-1 {
+        display: grid;
+        grid-template-columns: max-content 1fr;
+        align-items: center;
+      }
+
+      .row-15 {
+        grid-row: 25 / span 3; 
+        display: grid;
+        grid-template-rows: repeat(3, max-content);
+
+        border-bottom: 1px solid black;
+      }
+
+      .row-15__row-2 {
+        display: grid;
+        grid-template-columns: max-content 1fr;
+        align-items: center;
+      }
+
+      .row-15__row-3 {
+        display: grid;
+        grid-template-columns: max-content 3fr repeat(2, max-content 1fr);
+        align-items: center;
+      }
+
+      .row-16 {
+        grid-row: 28 / span 2; 
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .row-16__row-3-2 {
+        display: grid;
+        grid-template-columns: max-content 1fr;
+        align-items: center;
+
+      }
+
+
+      .row-17 {
+        grid-row: 30 / span 2; 
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+
+        border-bottom: 1px solid black;
+        border-top: 1px solid black;
+      }
+      .row-17__row-1-2 {
+        display: grid;
+        grid-template-columns: max-content 1fr;
+        align-items: center;
+      }
+
+
+      .row-18 {
+        grid-row: 32 / 33; 
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        border-bottom: 1px solid black;
+      }
+
+      .row-18__row-1 {
+        display: grid;
+        grid-template-columns: max-content 1fr;
+        align-items: center;
+      }
+
+      .row-19 {
+        grid-row: 33 / span 2; 
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        border-bottom: 1px solid black;
+      }
+
+      .row-19__row-2 {
+        display: grid;
+        grid-template-columns: max-content 1fr;
+        align-items: center;
+      }
+
+      .row-20 { font-style: italic; padding: 20px 0;
+        text-align: center;
+      }
+      .page_footer { display: flex; font-size: var(--textSizeForm); justify-content: space-between; margin-top:5px;}
 
   body
     div(class="page")
@@ -24,14 +377,14 @@ html(lang="en")
 
         section(class="row-1")
           div(class="row-1-col-1") 
-              p NAME OF ADJUSTER:
-              span(class="inputPlaceholder" name="nameOfAdjuster") DUMMY TEXT
+            p NAME OF ADJUSTER:
+            span(class="inputPlaceholder" name="nameOfAdjuster") DUMMY TEXT
           div(class="row-1-col-2")
-              p DATE OF LOSS:
-              span(class="inputPlaceholder" name="dateOfLoss") DUMMY TEXT
+            p DATE OF LOSS:
+            span(class="inputPlaceholder" name="dateOfLoss") DUMMY TEXT
           div(class="row-1-col-3")
-              p FICO Number:
-              span(class="inputPlaceholder" name="fico") DUMMY TEXT
+            p FICO Number:
+            span(class="inputPlaceholder" name="fico") DUMMY TEXT
 
         section(class="row-2")
           div(class="row-2-col-1") 
@@ -149,7 +502,7 @@ html(lang="en")
 
             p ZIP Code:
             span(class="inputPlaceholder" name="zipRow9") DUMMY TEXT
-        
+
 
         section(class="row-10")
           div(class="row-10__row-1 ")
@@ -278,7 +631,7 @@ html(lang="en")
             div(class="row-17__row-1-2")
               p CASH VALUE: $
               span(class="inputPlaceholder" name="actualCash17") DUMMY TEXT
-        
+
         section(class="row-18")
           div(class="row-18__row-1")
             p ESTIMATED CONTENTS REPAIR COST: $
