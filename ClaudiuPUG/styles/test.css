@@ -25,20 +25,17 @@
   margin-left: 5px;
   margin-right: 5px;
   text-decoration: underline;
-  /* background-color: palegreen; */
 }
 
 body { font-family: Arial, Helvetica, sans-serif;}
 
-
-/* PAGE HEADER */
 
 .page { 
   display: flex;
   flex-direction: column;
   width: 23cm;
   margin: 0 auto;
-  line-height: 2;
+  line-height: 1.8;
 }
 
 .page__header {
@@ -64,18 +61,15 @@ body { font-family: Arial, Helvetica, sans-serif;}
   text-align: right;
 }
 
-/** TABLE GRID CONTAINER */
 
 
 .table-grid {
   display:grid;
   align-items: center;
-  /* line-height: .3; */
   font-size: var(--textSizeForm);
   border: 2px solid #000;
 }
 
-/** HELPERS BORDERS PADDING MUTUAL */
 .row-4__row-1, .row-4__row-2,
 .row-5__row-1, .row-5__row-2,
 .row-6__row-1, .row-7__row-1,
@@ -105,7 +99,6 @@ body { font-family: Arial, Helvetica, sans-serif;}
 }
 
 
-/** ROW 1 */
 .row-1 {
   display: grid;
   grid-template-columns: 50% 30% 20%;
@@ -130,7 +123,6 @@ body { font-family: Arial, Helvetica, sans-serif;}
   align-items: center;
 }
 
-/** ROW 2 */
 .row-2 {
   grid-row: 2 / 3; 
   display: grid;
@@ -145,7 +137,6 @@ body { font-family: Arial, Helvetica, sans-serif;}
   align-items: center;
 }
 
-/** ROW 3 */
 .row-3 {
   grid-row: 3 / span 3; 
   display: grid;
@@ -166,7 +157,6 @@ body { font-family: Arial, Helvetica, sans-serif;}
   align-items: center;
 }
 
-/** ROW 4 */
 .row-4 {
   grid-row: 6 / span 2; 
   display: grid;
@@ -182,7 +172,6 @@ body { font-family: Arial, Helvetica, sans-serif;}
   align-items: center;
 }
 
-/** ROW 5 */
 
 .row-5 {
   grid-row: 8 / span 2; 
@@ -195,7 +184,6 @@ body { font-family: Arial, Helvetica, sans-serif;}
   align-items: center;
 }
 
-/** ROW 6 */
 
 .row-6 {
   grid-row: 10 / 11; 
@@ -212,7 +200,6 @@ body { font-family: Arial, Helvetica, sans-serif;}
 }
 
 
-/** ROW 7 */
 .row-7 {
   grid-row: 11 / span 2; 
   display: grid;
@@ -226,7 +213,6 @@ body { font-family: Arial, Helvetica, sans-serif;}
 }
 
 
-/** ROW 8 */
 .row-8 {
   grid-row: 13 / 14; 
   display: grid;
@@ -242,7 +228,6 @@ body { font-family: Arial, Helvetica, sans-serif;}
   align-items: center;
 }
 
-/** ROW 9 */
 
 .row-9 {
   grid-row: 14 / span 3; 
@@ -264,7 +249,6 @@ body { font-family: Arial, Helvetica, sans-serif;}
   align-items: center;
 }
 
-/** ROW 10 */
 .row-10 {
   grid-row: 17 / span 2; 
   display: grid;
@@ -279,7 +263,6 @@ body { font-family: Arial, Helvetica, sans-serif;}
   align-items: center;
 }
 
-/** ROW 11 */
 
 .row-11 {
   grid-row: 19 / span 2; 
@@ -294,7 +277,6 @@ body { font-family: Arial, Helvetica, sans-serif;}
   align-items: center;
 }
 
-/* * ROW 12 */
 .row-12 {
   grid-row: 21 / 22; 
   display: grid;
@@ -308,7 +290,6 @@ body { font-family: Arial, Helvetica, sans-serif;}
 }
 
 
-/** ROW 13 */
 .row-13 {
   grid-row: 22 / span 2; 
   display: grid;
@@ -324,7 +305,6 @@ body { font-family: Arial, Helvetica, sans-serif;}
   align-items: center;
 }
 
-/** ROW 14 */
 .row-14 {
   grid-row: 24 / 25; 
   display: grid;
@@ -339,7 +319,6 @@ body { font-family: Arial, Helvetica, sans-serif;}
   align-items: center;
 }
 
-/** ROW 15 */
 .row-15 {
   grid-row: 25 / span 3; 
   display: grid;
@@ -360,7 +339,6 @@ body { font-family: Arial, Helvetica, sans-serif;}
   align-items: center;
 }
 
-/** ROW 16 */
 .row-16 {
   grid-row: 28 / span 2; 
   display: grid;
@@ -374,7 +352,6 @@ body { font-family: Arial, Helvetica, sans-serif;}
 
 }
 
-/** ROW 17 */
 
 .row-17 {
   grid-row: 30 / span 2; 
@@ -390,7 +367,6 @@ body { font-family: Arial, Helvetica, sans-serif;}
   align-items: center;
 }
 
-/** ROW 18 */
 
 .row-18 {
   grid-row: 32 / 33; 
@@ -406,7 +382,6 @@ body { font-family: Arial, Helvetica, sans-serif;}
   align-items: center;
 }
 
-/** ROW 19 */
 .row-19 {
   grid-row: 33 / span 2; 
   display: grid;
@@ -427,7 +402,6 @@ body { font-family: Arial, Helvetica, sans-serif;}
   text-align: center;
 }
 
-/** PAGE FOOTER */
 
 .page_footer {
   display: flex;

@@ -1,0 +1,191 @@
+:root {
+  --bigFont: 15pt;
+  --mediumFont: 10pt;
+  --smallFont: 8pt;
+  --textSizeForm: 9.5pt;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding:0;
+}
+
+body { font-family: Arial, Helvetica, sans-serif;}
+
+/** HELPERS AND STYLE & PADDING */
+.text_BoldUnderline {
+  font-weight: bold;
+  text-decoration: underline;
+}
+.text_bold {font-weight: bold;}
+
+.line_middle {
+  border: 1px solid black;
+  margin-bottom: 10px;
+  margin-top: 5px;
+}
+
+
+.placeholderInput {
+  display: inline-block;
+  white-space: nowrap; 
+  overflow: hidden;
+  text-overflow: ellipsis; 
+  margin-left: 5px;
+  margin-right: 5px;
+  border-bottom: 1px solid black;
+}
+
+.sectionForm > div:not(:last-child) {
+  padding-bottom: 5px;
+  /* background-color: yellow; */
+  /* border-bottom: 1px solid black; */
+}
+.paragraphGrid > p:not(:last-child) {
+  padding-bottom: 5px;
+}
+
+.paragraphGrid {
+  margin-top: 5px;
+}
+
+.pNameMoney {
+  display: flex;
+  margin: 8px 0;
+}
+
+span[name="amount"]::before {
+  content: '\0024';
+}
+
+.cellPhone::after {
+  content: '\0023';
+  margin: 0 2px;
+  font-size: 12px;
+}
+
+.cellPhone::before {
+  content: '\002A \002A';
+  margin: 0 3px;
+  font-size: 12px;
+}
+
+.ifApplicable {
+  font-weight: normal;
+  font-size: var(--mediumFont);
+  margin-left: 5px;
+}
+
+.ifApplicable::before {
+  content: '\0028';
+}
+
+.ifApplicable::after{
+  content: '\0029';
+}
+
+/** END */
+
+.page { 
+  display: flex;
+  flex-direction: column;
+  width: 23cm;
+  margin: 0 auto;
+}
+
+.header {
+  display: grid;
+  grid-template-columns: 25% 1fr;
+  justify-items: center;
+  align-items: center;
+
+  margin-bottom: 30px;
+}
+
+.header_logo-img {
+  width: 200px;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+.header_title, .scndTitle {
+  font-size: var(--bigFont);
+  font-weight: bold;
+}
+
+.unorderedLi li {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  line-height: 0.8;
+}
+
+.unorderedLi li::before {
+  content: '\2022';
+  display: inline-block;
+  font-size: 30px;
+  margin-left: 20px;
+  margin-right: 10px;
+}
+
+.paragraphGrid {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+}
+
+.sectionForm {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(6, auto);
+  margin-top: 5px;
+}
+
+.formRow1, .formRow2 {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+}
+
+.formRow3, .formRow5 {
+  display: grid;
+  grid-template-columns: max-content 2fr 2fr 1fr;
+  grid-template-rows:repeat(2, 1fr);
+}
+
+.secondRowName {
+  grid-row: 2 / 3;
+  grid-column: 2 /3;
+}
+
+.secondRowSignature {
+  grid-row: 2 / 3;
+  grid-column: 3 / 4;
+}
+
+.secondRowDate {
+  grid-row: 2 / 3;
+  grid-column: 4 / 5;
+}
+
+.secondRowName, .secondRowDate, .secondRowSignature {
+  font-size: var(--smallFont);
+  font-weight: bold;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.formRow4, .formRow6 {
+  display: grid;
+  grid-template-columns: max-content 1fr max-content 1fr;
+}
+
+.text_footer {
+  margin-top: 10px;
+  font-size: var(--smallFont);
+}
+
+.footer-img {
+  width: 23cm;
+  object-fit: cover;
+  margin-top: 20px;
+}

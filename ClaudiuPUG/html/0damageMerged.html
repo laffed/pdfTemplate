@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preliminary Damage Assessment</title>
+    <style>
+      :root {
+      --bigFont: 12pt;
+      --mediumFont: 10pt;
+      --smallFont: 8pt;
+      --textSizeForm: 9pt;
+      --borderBottomSmall: 1px solid #000;
+      --paddingTop: 5px;
+      }
+      
+      
+      *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding:0;
+      }
+      
+      
+      .pg1-inputPlaceholder {
+        display: inline-flex;
+        white-space: nowrap; 
+        overflow: hidden;
+        text-overflow: ellipsis; 
+        margin-left: 5px;
+        margin-right: 5px;
+        //- border-bottom: 1px solid #000;
+        line-height: normal;
+        
+      }
+      
+      body { font-family: Arial, Helvetica, sans-serif;}
+      
+      
+      /* PAGE HEADER */
+      
+      .pg1-page { 
+      display: flex;
+      flex-direction: column;
+      width: 21cm;
+      height: 29.7cm;
+      margin: 0 auto;
+      line-height: 1.7;
+      margin-bottom:2.1rem;
+      }
+      
+      .pg1-page__header {
+      display: grid;
+      grid-template-columns: 3fr 1fr;
+      justify-items: center;
+      text-align: center;
+      line-height: 1.2;
+      }
+      
+      .pg1-page__header-title--small {font-size:var(--mediumFont)}
+      .pg1-page__header-title--medium {font-size:var(--bigFont)}
+      
+      
+      .pg1-page__header-title-h1 {
+      font-size: var(--bigFont);
+      }
+      
+      .pg1-page__header-info {
+      font-size: var(--smallFont);
+      justify-self: end;
+      align-self: end;
+      text-align: right;
+      }
+      
+      /** TABLE GRID CONTAINER */
+      
+      
+      .pg1-table-grid {
+      display:grid;
+      align-items: center;
+      /* line-height: .pg1-3; */
+      font-size: var(--textSizeForm);
+      border: 2px solid #000;
+      }
+      
+      /** HELPERS BORDERS PADDING MUTUAL */
+      .pg1-row-4__row-1, .pg1-row-4__row-2,
+      .pg1-row-5__row-1, .pg1-row-5__row-2,
+      .pg1-row-10__row-1, .pg1-row-10__row-2,
+      .pg1-row-11__row-1, .pg1-row-11__row-2,
+      .pg1-row-16__row-1, .pg1-row-16__row-2,
+      .pg1-row-17__row-1, .pg1-row-17__row-2,
+      .pg1-row-1-col-2, .pg1-row-6__row-1:first-child,
+      .pg1-row-7__row-1:first-child, .pg1-row-12__row-1:first-child,
+      .pg1-row-19__row-1:first-child, .pg1-row-13__row-1:first-child {
+      border-right: 1px solid black;
+      }
+      
+      .pg1-row-1 > div, .pg1-row-2 > div,
+      .pg1-row-3 > div, .pg1-row-4 > div,
+      .pg1-row-5 > div, .pg1-row-6 > div,
+      .pg1-row-7 > div, .pg1-row-8 > div,
+      .pg1-row-9 > div, .pg1-row-10 > div,
+      .pg1-row-11 > div, .pg1-row-12 > div,
+      .pg1-row-13 > div, .pg1-row-14 > div,
+      .pg1-row-15 > div, .pg1-row-16 > div,
+      .pg1-row-17 > div, .pg1-row-18 > div,
+      .pg1-row-19 > div
+      {
+      padding-top: 5px;
+      padding-bottom: 5px;
+      padding-left: 5px;
+      }
+      
+      
+      /** ROW 1 */
+      .pg1-row-1 {
+      display: grid;
+      grid-template-columns: 50% 30% 20%;
+      
+      border-bottom: 1px solid black;
+      }
+      
+      .pg1-row-1-col-1 {
+      display: grid;
+      grid-template-columns: max-content 1fr;
+      align-items: center;
+      }
+      
+      .pg1-row-1-col-2 {
+      display: grid;
+      grid-template-columns: max-content 1fr;
+      align-items: center;
+      }
+      .pg1-row-1-col-3 {
+      display: grid;
+      grid-template-columns: max-content 1fr;
+      align-items: center;
+      margin-right:3px;
+      }
+      
+      /** ROW 2 */
+      .pg1-row-2 {
+      grid-row: 2 / 3; 
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      
+      border-bottom: 1px solid black;
+      }
+      
+      .pg1-row-2-col-1 {
+      display: grid;
+      grid-template-columns: max-content 1fr;
+      align-items: center;
+      }
+      
+      /** ROW 3 */
+      .pg1-row-3 {
+      grid-row: 3 / span 3; 
+      display: grid;
+      grid-template-rows: repeat(3, max-content);
+      
+      border-bottom: 1px solid black;
+      }
+      
+      .pg1-row-3__row-2 {
+      display: grid;
+      grid-template-columns: max-content 1fr;
+      align-items: center;
+      }
+      
+      .pg1-row-3__row-3 {
+      display: grid;
+      grid-template-columns: max-content 3fr repeat(2, max-content 1fr);
+      align-items: center;
+      }
+      
+      /** ROW 4 */
+      .pg1-row-4 {
+      grid-row: 6 / span 2; 
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      
+      border-bottom: 1px solid black;
+      }
+      
+      
+      .pg1-row-4__row-3-2 {
+      display: grid;
+      grid-template-columns: max-content 1fr;
+      align-items: center;
+      }
+      
+      /** ROW 5 */
+      
+      .pg1-row-5 {
+      grid-row: 8 / span 2; 
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      }
+      .pg1-row-5__row-1-2 {
+      display: grid;
+      grid-template-columns: max-content 1fr;
+      align-items: center;
+      }
+      
+      /** ROW 6 */
+      
+      .pg1-row-6 {
+      grid-row: 10 / 11; 
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      border-top:1px solid black;
+      border-bottom: 1px solid black;
+      }
+      
+      .pg1-row-6__row-1 {
+      display: grid;
+      grid-template-columns: max-content 1fr;
+      align-items: center;
+      }
+      
+      
+      /** ROW 7 */
+      .pg1-row-7 {
+      grid-row: 11 / span 2; 
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .pg1-row-7__row-2 {
+      display: grid;
+      grid-template-columns: max-content 1fr;
+      align-items: center;
+      }
+      
+      
+      /** ROW 8 */
+      .pg1-row-8 {
+      grid-row: 13 / 14; 
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      
+      border-bottom: 1px solid black;
+      border-top: 1px solid black;
+      }
+      
+      .pg1-row-8__row-1 {
+      display: grid;
+      grid-template-columns: max-content 1fr;
+      align-items: center;
+      }
+      
+      /** ROW 9 */
+      
+      .pg1-row-9 {
+      grid-row: 14 / span 3; 
+      display: grid;
+      grid-template-rows: repeat(3, max-content);
+      
+      border-bottom: 1px solid black;
+      }
+      
+      .pg1-row-9__row-2 {
+      display: grid;
+      grid-template-columns: max-content 1fr;
+      align-items: center;
+      }
+      
+      .pg1-row-9__row-3 {
+      display: grid;
+      grid-template-columns: max-content 3fr repeat(2, max-content 1fr);
+      align-items: center;
+      }
+      
+      /** ROW 10 */
+      .pg1-row-10 {
+      grid-row: 17 / span 2; 
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      
+      border-bottom: 1px solid black;
+      }
+      
+      .pg1-row-10__row-3-2 {
+      display: grid;
+      grid-template-columns: max-content 1fr;
+      align-items: center;
+      }
+      
+      /** ROW 11 */
+      
+      .pg1-row-11 {
+      grid-row: 19 / span 2; 
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      
+      border-bottom: 1px solid black;
+      }
+      .pg1-row-11__row-1-2 {
+      display: grid;
+      grid-template-columns: max-content 1fr;
+      align-items: center;
+      }
+      
+      /* * ROW 12 */
+      .pg1-row-12 {
+      grid-row: 21 / 22; 
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .pg1-row-12__row-1 {
+      display: grid;
+      grid-template-columns: max-content 1fr;
+      align-items: center;
+      }
+      
+      
+      /** ROW 13 */
+      .pg1-row-13 {
+      grid-row: 22 / span 2; 
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      
+      border-top:1px solid black;
+      border-bottom: 1px solid black;
+      }
+      
+      .pg1-row-13__row-2 {
+      display: grid;
+      grid-template-columns: max-content 1fr;
+      align-items: center;
+      }
+      
+      /** ROW 14 */
+      .pg1-row-14 {
+      grid-row: 24 / 25; 
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      
+      border-bottom: 1px solid black;
+      }
+      
+      .pg1-row-14-col-1 {
+      display: grid;
+      grid-template-columns: max-content 1fr;
+      align-items: center;
+      }
+      
+      /** ROW 15 */
+      .pg1-row-15 {
+      grid-row: 25 / span 3; 
+      display: grid;
+      grid-template-rows: repeat(3, max-content);
+      
+      border-bottom: 1px solid black;
+      }
+      
+      .pg1-row-15__row-2 {
+      display: grid;
+      grid-template-columns: max-content 1fr;
+      align-items: center;
+      }
+      
+      .pg1-row-15__row-3 {
+      display: grid;
+      grid-template-columns: max-content 3fr repeat(2, max-content 1fr);
+      align-items: center;
+      }
+      
+      /** ROW 16 */
+      .pg1-row-16 {
+      grid-row: 28 / span 2; 
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      }
+      
+      .pg1-row-16__row-3-2 {
+      display: grid;
+      grid-template-columns: max-content 1fr;
+      align-items: center;
+      
+      }
+      
+      /** ROW 17 */
+      
+      .pg1-row-17 {
+      grid-row: 30 / span 2; 
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      
+      border-bottom: 1px solid black;
+      border-top: 1px solid black;
+      }
+      .pg1-row-17__row-1-2 {
+      display: grid;
+      grid-template-columns: max-content 1fr;
+      align-items: center;
+      }
+      
+      /** ROW 18 */
+      
+      .pg1-row-18 {
+      grid-row: 32 / 33; 
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      
+      border-bottom: 1px solid black;
+      }
+      
+      .pg1-row-18__row-1 {
+      display: grid;
+      grid-template-columns: max-content 1fr;
+      align-items: center;
+      }
+      
+      /** ROW 19 */
+      .pg1-row-19 {
+      grid-row: 33 / span 2; 
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      
+      border-bottom: 1px solid black;
+      }
+      
+      .pg1-row-19__row-2 {
+      display: grid;
+      grid-template-columns: max-content 1fr;
+      align-items: center;
+      }
+      
+      .pg1-row-20 {
+      font-style: italic;
+      padding: 20px 0;
+      text-align: center;
+      }
+      
+      /** PAGE FOOTER */
+      
+      .pg1-page_footer {
+      display: flex;
+      font-size: var(--textSizeForm);
+      justify-content: space-between;
+      margin-top:5px;
+      }
+      
+      .pg2-page {
+      display: flex;
+      width: 21cm;
+      height: 29.7cm;
+      margin: 0 auto;
+      }
+      
+      .pg2-table-grid {
+      display:grid;
+      grid-template-columns: repeat(6,1fr);
+      align-items: center;
+      font-size: var(--textSizeForm);
+      border: 2px solid #000;
+      }
+      
+      .pg2-paragraph-1, .pg2-paragraph-2 {
+      padding: 5px 10px;
+      text-align: justify;
+      }
+      
+      .pg2-paragraph-1 {
+      grid-row: 1 / 2;
+      grid-column: 1 / 7;
+      }
+      
+      .pg2-paragraph-2 {
+      grid-row: 2 / 3;
+      grid-column: 1 / 7;
+      }
+      
+      .pg2-paragraph__title {
+      text-align: center;
+      font-weight: bold;
+      }
+      
+      .pg2-paragraph__title:not(:first-child) {
+      margin: 10px 0;
+      }
+      
+      .pg2-paragraph__title:first-child {
+      margin-top: 5px;
+      margin-bottom: 10px;
+      }
+      
+      .pg2-bold_text {
+      font-weight: bold;
+      }
+      
+      /* TABLE COL + ROWS */
+      
+      .pg2-col > p {
+      height: 49.4px;
+      display:flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      }
+      
+      
+      .pg2-col-lft {
+      grid-column: 1/2;
+      }
+      
+      .pg2-col-lft > * {
+      border-top: 1px solid black;
+      border-right: 1px solid black;
+      }
+      
+      
+      .pg2-col-mid {
+      grid-column: 2 / 6;
+      }
+      
+      .pg2-col-mid > * {
+      border-top: 1px solid black;
+      border-right: 1px solid black;
+      }
+      
+      .pg2-col-rgt {
+      grid-column:  6 / 7;
+      }
+      
+      .pg2-col-rgt > * {
+      border-top: 1px solid black;
+      }
+      
+      .pg2-footer {
+      display: flex;
+      justify-content: space-between;
+      font-size: var(--textSizeForm);
+      width: 21cm;
+      margin:auto;
+      padding-top:10px;
+      }      
+      
+    </style>
+  </head>
+  <body>
+    <div class="pg1-page">
+      <div class="pg1-page__header">
+        <div class="pg1-page__header-title">
+          <p class="pg1-page__header-title--small">DEPARTMENT OF HOMELAND SECURITY</p>
+          <p class="pg1-page__header-title--medium">Federal Emergency Management Agency</p>
+          <h1 class="pg1-page__header-title-h1">ADJUSTER'S PRELIMINARY FLOOD DAMAGE ASSESSMENT</h1>
+        </div>
+        <div class="pg1-page__header-info">
+          <p>OMB Control Number: 1660-0005</p>
+          <p>Expiration: 7-31-2020</p>
+        </div>
+      </div>
+      <div class="pg1-table-grid">
+        <section class="pg1-row-1">
+          <div class="pg1-row-1-col-1"> 
+            <p>NAME OF ADJUSTER:</p><span class="pg1-inputPlaceholder" name="nameOfAdjuster"></span>
+          </div>
+          <div class="pg1-row-1-col-2">
+            <p>DATE OF LOSS:</p><span class="pg1-inputPlaceholder" name="dateOfLoss"></span>
+          </div>
+          <div class="pg1-row-1-col-3">
+            <p>FICO Number:</p><span class="pg1-inputPlaceholder" name="fico"></span>
+          </div>
+        </section>
+        <section class="pg1-row-2">
+          <div class="pg1-row-2-col-1"> 
+            <p>NAME(S) OF INSURED:</p><span class="pg1-inputPlaceholder" name="nameRow2"></span>
+          </div>
+          <div class="pg1-row-2-col-1">
+            <p>POLICY NUMBER:</p><span class="pg1-inputPlaceholder" name="policyRow2"></span>
+          </div>
+        </section>
+        <section class="pg1-row-3">
+          <div class="pg1-row-3__r0w-1"> 
+            <p>ADDRESS OF INSURED PROPERTY:</p>
+          </div>
+          <div class="pg1-row-3__row-2"> 
+            <p>Street Address:</p><span class="pg1-inputPlaceholder" name="streetRow3"></span>
+          </div>
+          <div class="pg1-row-3__row-3"> 
+            <p>City:</p><span class="pg1-inputPlaceholder" name="cityRow3"></span>
+            <p>State:</p><span class="pg1-inputPlaceholder" name="stateRow3"></span>
+            <p>ZIP Code:</p><span class="pg1-inputPlaceholder" name="zipRow3"></span>
+          </div>
+        </section>
+        <section class="pg1-row-4">
+          <div class="pg1-row-4__row-1">
+            <p>ESTIMATED MAIN BUILDING REPAIR</p>
+            <div class="pg1-row-4__row-3-2">
+              <p>COST: $</p><span class="pg1-inputPlaceholder" name="costRow4"></span>
+            </div>
+          </div>
+          <div class="pg1-row-4__row-2 ">
+            <p>MAIN BUILDING REPLACEMENT COST</p>
+            <div class="pg1-row-4__row-3-2">
+              <p>VALUE: $</p><span class="pg1-inputPlaceholder" name="replacementValue4"></span>
+            </div>
+          </div>
+          <div class="pg1-row-4__row-3 ">
+            <p>MAIN BUILDING ACTUAL CASH</p>
+            <div class="pg1-row-4__row-3-2">
+              <p>VALUE: $</p><span class="pg1-inputPlaceholder" name="actualCashValue4"></span>
+            </div>
+          </div>
+        </section>
+        <section class="pg1-row-5">
+          <div class="pg1-row-5__row-1">
+            <p>ESTIMATED DETACHED GARAGE</p>
+            <div class="pg1-row-5__row-1-2">
+              <p>REPAIR COST: $</p><span class="pg1-inputPlaceholder" name="repairCost5"></span>
+            </div>
+          </div>
+          <div class="pg1-row-5__row-2 ">
+            <p>DETACHED GARAGE REPLACEMENT</p>
+            <div class="pg1-row-5__row-1-2">
+              <p>COST VALUE: $</p><span class="pg1-inputPlaceholder" name="costValue5"></span>
+            </div>
+          </div>
+          <div class="pg1-row-5__row-3 ">
+            <p>DETACHED GARAGE ACTUAL</p>
+            <div class="pg1-row-5__row-1-2">
+              <p>CASH VALUE: $</p><span class="pg1-inputPlaceholder" name="cashValue5"></span>
+            </div>
+          </div>
+        </section>
+        <section class="pg1-row-6">
+          <div class="pg1-row-6__row-1">
+            <p>ESTIMATED CONTENTS REPAIR COST: $</p><span class="pg1-inputPlaceholder" name="repairCost6"></span>
+          </div>
+          <div class="pg1-row-6__row-1">
+            <p>CONTENTS ACTUAL CASH VALUE: $</p><span class="pg1-inputPlaceholder" name="actualCashValue6"></span>
+          </div>
+        </section>
+        <section class="pg1-row-7">
+          <div class="pg1-row-7__row-1">
+            <p>ESTIMATED APPURTENANT STRUCTURE CONTENTS
+              <div class="pg1-row-7__row-2">
+                <p>REPAIR COST: $</p><span class="pg1-inputPlaceholder" name="repairCost7"></span>
+              </div>
+            </p>
+          </div>
+          <div class="pg1-row-7__row-1">
+            <p>APPURTENANT STRUCTURE CONTENTS ACTUAL CASH
+              <div class="pg1-row-7__row-2">
+                <p>VALUE: $</p><span class="pg1-inputPlaceholder" name="appurtenantValue7"></span>
+              </div>
+            </p>
+          </div>
+        </section>
+        <section class="pg1-row-8">
+          <div class="pg1-row-8__row-1">
+            <p>NAME(S) OF INSURED:</p><span class="pg1-inputPlaceholder" name="nameRow8"></span>
+          </div>
+          <div class="pg1-row-8__row-1">
+            <p>POLICY NUMBER:</p><span class="pg1-inputPlaceholder" name="policyRow8"></span>
+          </div>
+        </section>
+        <section class="pg1-row-9">
+          <div class="pg1-row-3__r0w-1"> 
+            <p>ADDRESS OF INSURED PROPERTY:</p>
+          </div>
+          <div class="pg1-row-9__row-2"> 
+            <p>Street Address:</p><span class="pg1-inputPlaceholder" name="streetRow9"></span>
+          </div>
+          <div class="pg1-row-9__row-3"> 
+            <p>City:</p><span class="pg1-inputPlaceholder" name="cityRow9"></span>
+            <p>State:</p><span class="pg1-inputPlaceholder" name="stateRow9"></span>
+            <p>ZIP Code:</p><span class="pg1-inputPlaceholder" name="zipRow9"></span>
+          </div>
+        </section>
+        <section class="pg1-row-10">
+          <div class="pg1-row-10__row-1 ">
+            <p>ESTIMATED MAIN BUILDING REPAIR</p>
+            <div class="pg1-row-10__row-3-2">
+              <p>COST: $</p><span class="pg1-inputPlaceholder" name="repairCost10"></span>
+            </div>
+          </div>
+          <div class="pg1-row-10__row-2 ">
+            <p>MAIN BUILDING REPLACEMENT COST</p>
+            <div class="pg1-row-10__row-3-2">
+              <p>VALUE: $</p><span class="pg1-inputPlaceholder" name="replacementValue10"></span>
+            </div>
+          </div>
+          <div class="pg1-row-10__row-3">
+            <p>MAIN BUILDING ACTUAL CASH</p>
+            <div class="pg1-row-10__row-3-2">
+              <p>VALUE: $</p><span class="pg1-inputPlaceholder" name="actualCashValue10"></span>
+            </div>
+          </div>
+        </section>
+        <section class="pg1-row-11">
+          <div class="pg1-row-11__row-1">
+            <p>ESTIMATED DETACHED GARAGE</p>
+            <div class="pg1-row-11__row-1-2">
+              <p>REPAIR COST: $</p><span class="pg1-inputPlaceholder" name="repairCost11"></span>
+            </div>
+          </div>
+          <div class="pg1-row-11__row-2">
+            <p>DETACHED GARAGE REPLACEMENT</p>
+            <div class="pg1-row-11__row-1-2">
+              <p>COST VALUE: $</p><span class="pg1-inputPlaceholder" name="costValue11"></span>
+            </div>
+          </div>
+          <div class="pg1-row-11__row-3">
+            <p>DETACHED GARAGE ACTUAL</p>
+            <div class="pg1-row-11__row-1-2">
+              <p>CASH VALUE: $</p><span class="pg1-inputPlaceholder" name="cashValue11"></span>
+            </div>
+          </div>
+        </section>
+        <section class="pg1-row-12">
+          <div class="pg1-row-12__row-1">
+            <p>ESTIMATED CONTENTS REPAIR COST: $</p><span class="pg1-inputPlaceholder" name="repairCost12"></span>
+          </div>
+          <div class="pg1-row-12__row-1">
+            <p>CONTENTS ACTUAL CASH VALUE: $</p><span class="pg1-inputPlaceholder" name="actualCashValue12"></span>
+          </div>
+        </section>
+        <section class="pg1-row-13">
+          <div class="pg1-row-13__row-1 ">
+            <p>ESTIMATED APPURTENANT STRUCTURE CONTENTS
+              <div class="pg1-row-13__row-2">
+                <p>REPAIR COST: $</p><span class="pg1-inputPlaceholder" name="repairCost13"></span>
+              </div>
+            </p>
+          </div>
+          <div class="pg1-row-13__row-1">
+            <p>APPURTENANT STRUCTURE CONTENTS ACTUAL CASH
+              <div class="pg1-row-13__row-2">
+                <p>VALUE: $</p><span class="pg1-inputPlaceholder" name="actualCashValue13"></span>
+              </div>
+            </p>
+          </div>
+        </section>
+        <section class="pg1-row-14">
+          <div class="pg1-row-14-col-1"> 
+            <p>NAME(S) OF INSURED:</p><span class="pg1-inputPlaceholder" name="nameRow14"></span>
+          </div>
+          <div class="pg1-row-14-col-1">
+            <p>POLICY NUMBER:</p><span class="pg1-inputPlaceholder" name="policyRow14"></span>
+          </div>
+        </section>
+        <section class="pg1-row-15">
+          <div class="pg1-row-15__r0w-1"> 
+            <p>ADDRESS OF INSURED PROPERTY:</p>
+          </div>
+          <div class="pg1-row-15__row-2"> 
+            <p>Street Address:</p><span class="pg1-inputPlaceholder" name="street15"></span>
+          </div>
+          <div class="pg1-row-15__row-3"> 
+            <p>City:</p><span class="pg1-inputPlaceholder" name="city15"></span>
+            <p>State:</p><span class="pg1-inputPlaceholder" name="state15"></span>
+            <p>ZIP Code:</p><span class="pg1-inputPlaceholder" name="zip15"></span>
+          </div>
+        </section>
+        <section class="pg1-row-16">
+          <div class="pg1-row-16__row-1">
+            <p>ESTIMATED MAIN BUILDING REPAIR</p>
+            <div class="pg1-row-16__row-3-2">
+              <p>COST: $</p><span class="pg1-inputPlaceholder" name="repairCost16"></span>
+            </div>
+          </div>
+          <div class="pg1-row-16__row-2">
+            <p>MAIN BUILDING REPLACEMENT COST</p>
+            <div class="pg1-row-16__row-3-2">
+              <p>VALUE: $</p><span class="pg1-inputPlaceholder" name="replacementValue16"></span>
+            </div>
+          </div>
+          <div class="pg1-row-16__row-3 ">
+            <p>MAIN BUILDING ACTUAL CASH</p>
+            <div class="pg1-row-16__row-3-2">
+              <p>VALUE: $</p><span class="pg1-inputPlaceholder" name="actualCashValue16"></span>
+            </div>
+          </div>
+        </section>
+        <section class="pg1-row-17">
+          <div class="pg1-row-17__row-1">
+            <p>ESTIMATED DETACHED GARAGE</p>
+            <div class="pg1-row-17__row-1-2">
+              <p>REPAIR COST: $</p><span class="pg1-inputPlaceholder" name="repairCost17"></span>
+            </div>
+          </div>
+          <div class="pg1-row-17__row-2">
+            <p>DETACHED GARAGE REPLACEMENT</p>
+            <div class="pg1-row-17__row-1-2">
+              <p>COST VALUE: $</p><span class="pg1-inputPlaceholder" name="replacementCost17"></span>
+            </div>
+          </div>
+          <div class="pg1-row-17__row-3">
+            <p>DETACHED GARAGE ACTUAL</p>
+            <div class="pg1-row-17__row-1-2">
+              <p>CASH VALUE: $</p><span class="pg1-inputPlaceholder" name="actualCash17"></span>
+            </div>
+          </div>
+        </section>
+        <section class="pg1-row-18">
+          <div class="pg1-row-18__row-1">
+            <p>ESTIMATED CONTENTS REPAIR COST: $</p><span class="pg1-inputPlaceholder" name="repairCost18"></span>
+          </div>
+          <div class="pg1-row-18__row-1">
+            <p>CONTENTS ACTUAL CASH VALUE: $</p><span class="pg1-inputPlaceholder" name="actualCashValue18"></span>
+          </div>
+        </section>
+        <section class="pg1-row-19">
+          <div class="pg1-row-19__row-1">
+            <p>ESTIMATED APPURTENANT STRUCTURE CONTENTS
+              <div class="pg1-row-19__row-2">
+                <p>REPAIR COST: $</p><span class="pg1-inputPlaceholder" name="repairCost19"></span>
+              </div>
+            </p>
+          </div>
+          <div class="pg1-row-19__row-1 ">
+            <p>APPURTENANT STRUCTURE CONTENTS ACTUAL CASH
+              <div class="pg1-row-19__row-2">
+                <p>VALUE: $</p><span class="pg1-inputPlaceholder" name="actualCashValue19"></span>
+              </div>
+            </p>
+          </div>
+        </section>
+        <section class="pg1-row-20">
+          <p>See Page 2 for Privacy Act Statement and Paperwork Burden Disclosure Notice</p>
+        </section>
+      </div>
+      <div class="pg1-page_footer">
+        <p>FEMA FORM 086-0-20 (04/17)</p>
+        <p>Page 1 of 2</p>
+      </div>
+    </div>
+    <div class="pg2-page pg2-table-grid">
+      <div class="pg2-paragraph-1">
+        <p class="pg2-paragraph__title">PRIVACY ACT STATEMENT</p>
+        <p>
+           The information requested is necessary to process the subject loss. The authority to collect the information is 42 U.S.C. §§ 4001 to 4130. It is
+          voluntary on your part to furnish the information. However, omission of an item may preclude processing of the form. The Federal Emergency
+          Management Agency will not disclose this information, except to: the servicing agent acting as the Federal Government's fiscal agent; to
+          claims adjusters to enable them to confirm coverage and the location of insured property; to certain Federal, State, and Local Government
+          agencies for determining eligibility for benefits and for verification of agencies for acquisition and relocation-related projects, consistent with
+          the National Flood Insurance Program and consistent with the routine uses described in the program's system of record. Failure by you to
+          provide some or all of the information may result in delay in processing or denial of this claim or application.
+        </p>
+      </div>
+      <div class="pg2-paragraph-2">
+        <p class="pg2-paragraph__title">PAPERWORK BURDEN DISCLOSURE NOTICE</p>
+        <p>
+          Public reporting burden for the collection of information titled Claims for National Flood Insurance Program (NFIP) is estimated to average 6
+          hours per response. The burden estimate includes the time for reviewing instructions, searching existing data sources, gathering and
+          maintaining the data needed, and completing and submitting these forms. You are not required to respond to this collection of information
+          unless a currently valid OMB control number and expiration date is displayed in the upper right corner of the these forms. Send comments
+          regarding the accuracy of the burden estimate and suggestions for reducing the burden to: Information Collections Management, Department
+          of Homeland Security, Federal Emergency Management Agency, 500 C Street, S.W., Washington, DC 20472, Paperwork Reduction Project
+          (1660-0005).
+          <p><span class="pg2-bold_text">NOTE: Do not send your completed form to this address.</span></p>
+        </p>
+      </div>
+      <div class="pg2-col pg2-col-lft">
+        <p>FEMA FORM NO.</p>
+        <p>086-0-06</p>
+        <p>086-0-07</p>
+        <p>086-0-08</p>
+        <p>086-0-09</p>
+        <p>086-0-10</p>
+        <p>086-0-11</p>
+        <p>086-0-12</p>
+        <p>086-0-13</p>
+        <p>086-0-14</p>
+        <p>086-0-15</p>
+        <p>086-0-16</p>
+        <p>086-0-17</p>
+        <p>086-0-18</p>
+        <p>086-0-19</p>
+        <p class="pg2-bold_text">086-0-20</p>
+        <p>086-0-21</p>
+      </div>
+      <div class="pg2-col pg2-col-mid">
+        <p>TITLE</p>
+        <p>Worksheet-Contents-Personal Property</p>
+        <p>Worksheet-Building</p>
+        <p>Worksheet-Building (Continued)</p>
+        <p>Proof of Loss</p>
+        <p>Increased Cost of Compliance</p>
+        <p>Notice of Loss</p>
+        <p><span>Statement as to Full Cost to Repair or Replacement Cost Coverage,</span><span>Subject to the Terms and Conditions of this Polic</span></p>
+        <p>Adjuster's Preliminary Report</p>
+        <p>Adjuster's Final Report</p>
+        <p>National Flood Insurance Program Narrative Report</p>
+        <p>Cause of Loss and Subrogation Report</p>
+        <p>Manufactured (Mobile) Home/Travel Trailer Worksheet</p>
+        <p>Mobile Home/Travel Trailer Worksheet (Continued)</p>
+        <p>Increased Cost of Compliance (ICC) Adjuster Report</p>
+        <p class="pg2-bold_text">Adjuster's Preliminary Flood Damage Assessment</p>
+        <p>Adjuster's Certification Application</p>
+      </div>
+      <div class="pg2-col pg2-col-rgt">
+        <p>BURDEN HOURS</p>
+        <p>2.50 Hours</p>
+        <p>2.50 Hours</p>
+        <p>1.00 Hours</p>
+        <p>.08 Hours</p>
+        <p>2.00 Hours</p>
+        <p>.07 Hours</p>
+        <p>.10 Hours</p>
+        <p>.07 Hours</p>
+        <p>.07 Hours</p>
+        <p>.08 Hours</p>
+        <p>1.00 Hours</p>
+        <p>.50 Hours</p>
+        <p>.25 Hours</p>
+        <p>.42 Hours</p>
+        <p class="pg2-bold_text">.25 Hours</p>
+        <p>.25 Hours</p>
+      </div>
+    </div>
+    <div class="pg2-footer">
+      <p>FEMA FORM 086-0-20 (04/17)</p>
+      <p>Page 2 of 2</p>
+    </div>
+  </body>
+</html>
