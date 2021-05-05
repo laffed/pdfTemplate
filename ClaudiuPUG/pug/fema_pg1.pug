@@ -5,6 +5,7 @@ html(lang="en")
     meta(http-equiv="X-UA-Compatible" content="IE=edge")
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
     link(rel="stylesheet" type="text/css" href='../styles/fema_pg1.css')
+    link(media="print" href="../styles/fema_pg1.css")
     title FEMA pg. 1
 
   body
@@ -29,106 +30,106 @@ html(lang="en")
         div(class="gridFirstBox__leftColumn")
           div(class="gridFirstBox__leftColumn-row1")
             p NAME(S) OF INSURED:
-            input(type="text" placeholder="Dummy text")
+            span(class="hideInputPlaceholder" name="nameOfInsured") 
 
           div(class="gridFirstBox__leftColumn-row2")
             p Property Address:
-            input(type="text" placeholder="Dummy text")
+            span(class="inputPlaceholder" name="propertyAddress") DUMMY TEXT
 
           div(class="gridFirstBox__leftColumn-row3")
             div(class="gridFirstBox__leftColumn-row3-col")
               p City:
-              input(type="text" placeholder="Dummy text")
+              span(class="inputPlaceholder" name="city") DUMMY TEXT
 
             div(class="gridFirstBox__leftColumn-row3-col")
               p State:
-              input(type="text" placeholder="Dummy text")
+              span(class="inputPlaceholder" name="state") DUMMY TEXT
 
             div(class="gridFirstBox__leftColumn-row3-col")
               p ZIP:
-              input(type="text" placeholder="Dummy text")
+              span(class="inputPlaceholder" name="zip") DUMMY TEXT
 
           div(class="gridFirstBox__leftColumn-row4")
             p Mailing/Temporary Address:
-            input(type="text" placeholder="Dummy text")
+            span(class="inputPlaceholder" name="tempAddress") DUMMY TEXT
 
           div(class="gridFirstBox__leftColumn-row5")
             p City:
-            input(type="text" placeholder="Dummy text")
+            span(class="inputPlaceholder" name="tempCity") DUMMY TEXT
             p State:
-            input(type="text" placeholder="Dummy text")
+            span(class="inputPlaceholder" name="tempState") DUMMY TEXT
             p ZIP:
-            input(type="text" placeholder="Dummy text")
+            span(class="inputPlaceholder" name="tempZip") DUMMY TEXT
 
           div(class="gridFirstBox__leftColumn-row6")
             p Best Contact Number:
-            input(type="text" placeholder="Dummy text")
+            span(class="inputPlaceholder" name="bestContactNr") DUMMY TEXT
 
           div(class="gridFirstBox__leftColumn-row7")
             p Alternate Contact Number:
-            input(type="text" placeholder="Dummy text")
+            span(class="inputPlaceholder" name="alternateContactNr") DUMMY TEXT
 
           div(class="gridFirstBox__leftColumn-row8")
             p Adjusting Company:
-            input(type="text" placeholder="Dummy text")
+            span(class="inputPlaceholder" name="adjustingCompany") DUMMY TEXT
 
           div(class="gridFirstBox__leftColumn-row9")
             p Adjuster Address:
-            input(type="text" placeholder="Dummy text")
+            span(class="inputPlaceholder" name="adjusterAddress") DUMMY TEXT
 
           div(class="gridFirstBox__leftColumn-row10")
             p City:
-            input(type="text" placeholder="Dummy text")
+            span(class="inputPlaceholder" name="adjusterCity") DUMMY TEXT
 
           div(class="gridFirstBox__leftColumn-row11")
             p State:
-            input(type="text" placeholder="Dummy text")
+            span(class="inputPlaceholder" name="adjusterState") DUMMY TEXT
             p ZIP:
-            input(type="text" placeholder="Dummy text")
+            span(class="inputPlaceholder" name="adjusterZip") DUMMY TEXT
 
           div(class="gridFirstBox__leftColumn-row12")
             p Adjuster's Telephone Numbers:
-            input(type="text" placeholder="Dummy text")
+            span(class="inputPlaceholder" name="adjusterTelNr") DUMMY TEXT
 
           div(class="gridFirstBox__leftColumn-row13")
             p Work:
-            input(type="text" placeholder="Dummy text")
+            span(class="inputPlaceholder" name="adjusterWorkNr") DUMMY TEXT
             p Mobile:
-            input(type="text" placeholder="Dummy text")
+            span(class="inputPlaceholder" name="adjusterMobileNr") DUMMY TEXT
 
 
         div(class="gridFirstBox__rightColumn")
           div(class="gridFirstBox__rightColumn-row1")
             p POLICY NUMBER:
-            input(type="text" placeholder="Dummy text")
+            span(class="inputPlaceholder" name="policyNr") DUMMY TEXT
 
           div(class="gridFirstBox__rightColumn-row2")
             p Date of Loss:
-            input(type="text" placeholder="Dummy text")
+            span(class="inputPlaceholder" name="dateOfLoss") DUMMY TEXT
 
           div(class="gridFirstBox__rightColumn-row3")
             p FICO Number:
-            input(type="text" placeholder="Dummy text")
+            span(class="inputPlaceholder" name="ficoNr") DUMMY TEXT
 
           div(class="gridFirstBox__rightColumn-row4")
             p Adjuster's File Number:
-            input(type="text" placeholder="Dummy text")
+            span(class="inputPlaceholder" name="adjusterFileNr") DUMMY TEXT
 
           div(class="gridFirstBox__rightColumn-row5")
             p Tax ID Number:
-            input(type="text" placeholder="Dummy text")
+            span(class="inputPlaceholder" name="taxIdNumber") DUMMY TEXT
     
           div(class="gridFirstBox__rightColumn-row6 marginTopHelper")
             p Date Loss Assigned:
-            input(type="text" placeholder="Dummy text")
+            span(class="inputPlaceholder" name="dateOfLoss") DUMMY TEXT
 
           div(class="gridFirstBox__rightColumn-row7")
             p Date Insured Contacted:
-            input(type="text" placeholder="Dummy text")
+            span(class="inputPlaceholder" name="dateInsuredContracted") DUMMY TEXT
 
           div(class="gridFirstBox__rightColumn-row8")
             p Date Loss Inspected:
-            input(type="text" placeholder="Dummy text")
+            span(class="inputPlaceholder" name="dateLossInspected") DUMMY TEXT
 
       div(class="gridSecondBox")
         div(class="gridSecondBox__leftColumn text_rotate bold_text") ATTS.
@@ -139,61 +140,51 @@ html(lang="en")
 
           div(class="gridSecondBox__rightColumn-row2")
             div
-              input(type="checkbox")
-
+              span(class="inputCheckbox" name="buildingCheck")
               p Building worksheets
-              span 
-                |(
-                input(type="text")
-                |)
-            div
-              input(type="checkbox")
-              p Photographs
-              span 
-                |(
-                input(type="text")
-                |)
+              span(class="inputPlaceholder" name="buildingInput") DUMMY TEXT
 
             div
-              input(type="checkbox")
+              span(class="inputCheckbox" name="photoCheck")
+              p Photographs
+              span(class="inputPlaceholder" name="photoInput") DUMMY TEXT
+
+
+            div
+              span(class="inputCheckbox" name="proofOfLoss")
               p Proof of loss
 
             div
-              input(type="checkbox")
+              span(class="inputCheckbox" name="buildingOtherCheck")
               p Other
 
             div  
               p (specify)
-              input(type="text")
+              span(class="inputPlaceholder" name="buildingOtherInput") DUMMY TEXT
 
           div(class="gridSecondBox__rightColumn-row3")
             div
-              input(type="checkbox")
+              span(class="inputCheckbox" name="contentsCheck")
               p Contents worksheets
-              span 
-                |(
-                input(type="text")
-                |)
+              span(class="inputPlaceholder" name="contentsInput") DUMMY TEXT
+
 
             div
-              input(type="checkbox")
+              span(class="inputCheckbox" name="narrativeCheck")
               p Narrative
-              span 
-                  |(
-                  input(type="text")
-                  |  pages)
+              span(class="inputPlaceholder" name="narrativeInput") DUMMY TEXT
 
             div
-              input(type="checkbox")
+              span(class="inputCheckbox" name="rcProof")
               p R/C Proof
             
             div
-              input(type="checkbox")
+              span(class="inputCheckbox" name="contentsOtherCheck")
               p Other
             
             div
               p (specify)
-              input(type="text")
+              span(class="inputPlaceholder" name="contentsOtherInput") DUMMY TEXT
 
       div(class="gridThirdBox")
         div(class="gridThirdBox__leftColumn text_rotate bold_text") INSURANCE
@@ -202,45 +193,45 @@ html(lang="en")
           div(class="gridThirdBox__middleColumn-left")
             p Coverage Verified From:
             div
-              input(type="checkbox")
+              span(class="inputCheckbox" name="nfip")
               p NFIP
             div
-              input(type="checkbox")
+              span(class="inputCheckbox" name="agentDaily")
               p Agent's Daily
             div
-              input(type="checkbox")
+              span(class="inputCheckbox" name="insuredPolicy")
               p Insured's Policy
           
           div(class="gridThirdBox__middleColumn-right")
             p Policy Term
             div
               p From:
-              input(type="text")
+              span(class="inputPlaceholder" name="policyTermFrom") DUMMY TEXT
             
             div
               p To:
-              input(type="text")
+              span(class="inputPlaceholder" name="policyTermTo") DUMMY TEXT
         
         div(class="gridThirdBox__rightColumn")
           div(class="gridThirdBox__rightColumn-left")
             p Program:
             div
-              input(type="checkbox")
+              span(class="inputCheckbox" name="programEmergency")
               p Emergency
             div
-              input(type="checkbox")
+              span(class="inputCheckbox" name="programRegular")
               p Regular
 
           div(class="gridThirdBox__rightColumn-right")
             p SFIP Form:
             div
-              input(type="checkbox")
+              span(class="inputCheckbox" name="generalProperty")
               p General Property
             div
-              input(type="checkbox")
+              span(class="inputCheckbox" name="dwelling")
               p Dwelling
             div
-              input(type="checkbox")
+              span(class="inputCheckbox" name="rcbap")
               p RCBAP
 
 
@@ -248,11 +239,11 @@ html(lang="en")
           div(class="inline-flex")
             p Advance payment requested?
             span
-              input(type="checkbox")
+              span(class="inputCheckbox" name="advancePaymentYes")
               span Yes
 
             span
-              input(type="checkbox")
+              span(class="inputCheckbox" name="advancePaymentNo")
               span No
 
           em If yes, submit Proof of Loss for (FF 086-0-9) for amount of payment and supporting documentation with this report.
@@ -267,28 +258,28 @@ html(lang="en")
             p COVERAGE
             span
               |$
-              input(type="text")
+              span(class="inputPlaceholder" name="coverageBuilding") DUMMY TEXT
             span
               |$
-              input(type="text")
+              span(class="inputPlaceholder" name="coverageContents") DUMMY TEXT 
 
           div
             p DEDUCTIBLE
             span
               |$
-              input(type="text")
+              span(class="inputPlaceholder" name="deductibleBuilding") DUMMY TEXT
             span
               |$
-              input(type="text")
+              span(class="inputPlaceholder" name="deductibleContents") DUMMY TEXT
 
           div
             p RESERVE
             span
               |$
-              input(type="text")
+              span(class="inputPlaceholder" name="reserveBuilding") DUMMY TEXT
             span
               |$
-              input(type="text")
+              span(class="inputPlaceholder" name="reserveContents") DUMMY TEXT
       
       div(class="gridFourthBox")
         div(class="gridFourthBox__leftColumn text_rotate bold_text") RISK
@@ -302,128 +293,128 @@ html(lang="en")
 
               div(class="gridFourthBox__rightColumn-Grid--right__FLEX")
                 div
-                  input(type="checkbox")
+                  span(class="inputCheckbox" name="singleFamily")
                   p Single Family
                 div
-                  input(type="checkbox")
+                  span(class="inputCheckbox" name="families")
                   p 2-4 Family
                 div
-                  input(type="checkbox")
+                  span(class="inputCheckbox" name="condoAssociation")
                   p Condo Association
                 div
-                  input(type="checkbox")
+                  span(class="inputCheckbox" name="condoUnit")
                   p Condo Unit
                 div
-                  input(type="checkbox")
+                  span(class="inputCheckbox" name="otherResidential")
                   p Other Residential
 
               div
-                input(type="checkbox")
+                span(class="inputCheckbox" name="nonResidential")
                 p Non-Residential (including Business Buildings and Other Non-Residential Buildings)
 
               div(class="gridFourthBox__rightColumn-Grid--right__FLEX")
                 div
-                  input(type="checkbox")
+                  span(class="inputCheckbox" name="mobileHomeTraveler")
                   p Mobile Home/Traveler Trailer:
 
                 div
                   p Make:
-                  input(type="text" placeholder="Dummy text")
+                  span(class="inputPlaceholder" name="make") DUMMY TEXT
 
               div(class="gridFourthBox__rightColumn-Grid--right__FLEX")
                 div
                   p Model:
-                  input(type="text" placeholder="Dummy text")
+                  span(class="inputPlaceholder" name="model") DUMMY TEXT
 
                 div
                   p Serial Number:
-                  input(type="text" placeholder="Dummy text")
+                  span(class="inputPlaceholder" name="serialNumber") DUMMY TEXT
 
           div(class="gridFourthBox2__rightColumn-Grid")
             div
               p OCCUPANCY:
 
               span
-                input(type="checkbox")
+                span(class="inputCheckbox" name="owner")
                 p Owner
 
               span
-                input(type="checkbox")
+                span(class="inputCheckbox" name="tenant")
                 p Tenant
 
               span
-                input(type="checkbox")
+                span(class="inputCheckbox" name="govOwned")
                 p State Government owned
 
               span
-                input(type="checkbox")
+                span(class="inputCheckbox" name="unoccupied")
                 p Unoccupied
 
               p RESIDENCY:
               
               span
-                input(type="checkbox")
+                span(class="inputCheckbox" name="principal")
                 p Principal
 
               span
-                input(type="checkbox")
+                span(class="inputCheckbox" name="seasonal")
                 p Seasonal
             
             div
               p TITLE VERIFIED?
 
               span
-                input(type="checkbox")
+                span(class="inputCheckbox" name="titleVerifiedYes")
                 p Yes
               
               span
-                input(type="checkbox")
+                span(class="inputCheckbox" name="titleVerifiedNo")
                 p No
               
               span
                 p Source of verification:
-                input(type="text" placeholder="Dummy Text")
+                span(class="inputPlaceholder" name="sourceOfVerification") DUMMY TEXT
 
           div(class="gridFourthBox3__rightColumn-Grid")
             div
               p Number of floors in the building including basement/crawl space:
 
               span
-                input(type="checkbox")
+                span(class="inputCheckbox" name="numberFloorsOne")
                 p 1
 
               span
-                input(type="checkbox")
+                span(class="inputCheckbox" name="numberFloorsTwo")
                 p 2
 
               span
-                input(type="checkbox")
+                span(class="inputCheckbox" name="numberFloorsMore")
                 p 3 (or more)
             
             div
               p Is building a split level?
 
               span
-                input(type="checkbox")
+                span(class="inputCheckbox" name="splitLevelYes")
                 p Yes
               
               span
-                input(type="checkbox")
+                span(class="inputCheckbox" name="splitLevelNo")
                 p No
 
             div
               p In case of multiple occupancy, indicate floor(s) occupied by insured:
              
               span
-                input(type="checkbox")
+                span(class="inputCheckbox" name="basement")
                 p Basement
 
               span
-                input(type="checkbox")
+                span(class="inputCheckbox" name="first")
                 p First
 
               span
-                input(type="checkbox")
+                span(class="inputCheckbox" name="second")
                 p Second and/or above
 
           div(class="gridFourthBox4__rightColumn-Grid")
@@ -431,25 +422,25 @@ html(lang="en")
               p Type of basement:
 
               span
-                input(type="checkbox")
+                span(class="inputCheckbox" name="typeBaseNone")
                 p None
 
               span
-                input(type="checkbox")
+                span(class="inputCheckbox" name="typeBaseUnfinished")
                 p Unfinished
 
               span
-                input(type="checkbox")
+                span(class="inputCheckbox" name="typeBaseFinished")
                 p Finished
 
               p Is basement flood-proofed?
 
               span
-                input(type="checkbox")
+                span(class="inputCheckbox" name="floodProofedYes")
                 p Yes
               
               span
-                input(type="checkbox")
+                span(class="inputCheckbox" name="floodProofedYes")
                 p No
 
           div(class="gridFourthBox4__rightColumn-Grid")
@@ -457,30 +448,30 @@ html(lang="en")
               p Building elevated?
               
               span
-                input(type="checkbox")
+                span(class="inputCheckbox" name="elevatedYes")
                 p Yes
 
               span
-                input(type="checkbox")
+                span(class="inputCheckbox" name="elevatedNo")
                 p No
 
               span
                 p Foundation area enclosure?
               
               span
-                input(type="checkbox")
+                span(class="inputCheckbox" name="areaEnclosureNone")
                 p None
               
               span
-                input(type="checkbox")
+                span(class="inputCheckbox" name="breakawayWalls")
                 p Breakaway walls
               
               span
-                input(type="checkbox")
+                span(class="inputCheckbox" name="areaEnclosureUnfinished")
                 p Unfinished
               
               p
-                input(type="checkbox")
+                span(class="inputCheckbox" name="areaEnclosureFinished")
                 p Finished
 
           div(class="gridFourthBoxLAST__rightColumn-Grid")
@@ -489,29 +480,29 @@ html(lang="en")
                 p Is Risk under construction?
 
                 span
-                  input(type="checkbox")
+                  span(class="inputCheckbox" name="riskUnderYes")
                   p Yes
 
                 span
-                  input(type="checkbox")
+                  span(class="inputCheckbox" name="riskUnderNo")
                   p No
 
               div
                 div 
                   p Date of Construction:
-                  input(type="text")
+                  span(class="inputPlaceholder" name="dateOfConstruction") DUMMY TEXT
               
               div
                 div
                   p FIRM Date:
-                  input(type="text")
+                  span(class="inputPlaceholder" name="firmDate") DUMMY TEXT
 
                   span
-                    input(type="checkbox")
+                    span(class="inputCheckbox" name="preFirm")
                     p Pre-Firm
 
                   span
-                    input(type="checkbox")
+                    span(class="inputCheckbox" name="postFirm")
                     p Post-Firm
             
             div(class="gridFourthBoxLAST-col-right")
@@ -522,38 +513,38 @@ html(lang="en")
                 p Building:
 
                 div
-                  input(type="checkbox")
+                  span(class="inputCheckbox" name="buildingPoor")
                   p  Poor
 
                 div
-                  input(type="checkbox")
+                  span(class="inputCheckbox" name="buildingFair")
                   p  Fair
 
                 div
-                  input(type="checkbox")
+                  span(class="inputCheckbox" name="buildingGood")
                   p  Good
 
                 div
-                  input(type="checkbox")
+                  span(class="inputCheckbox" name="buildingVeryGood")
                   p  Very Good
 
               div
                 p Contents
 
                 div
-                  input(type="checkbox")
+                  span(class="inputCheckbox" name="contentsPoor")
                   p  Poor
 
                 div
-                  input(type="checkbox")
+                  span(class="inputCheckbox" name="contentsFair")
                   p  Fair
 
                 div
-                  input(type="checkbox")
+                  span(class="inputCheckbox" name="contentsGood")
                   p  Good
 
                 div
-                  input(type="checkbox")
+                  span(class="inputCheckbox" name="contentsVeryGood")
                   p  Very Good
 
 

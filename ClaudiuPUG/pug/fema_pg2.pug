@@ -1,0 +1,415 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet" type="text/css" href='../styles/fema_pg2.css')
+    title FEMA pg. 2
+
+  body
+    div(class="page")
+      div(class="boxZero")
+        div(class="boxZero__columnLeft")
+          div(class="boxZero__columnLeft-row1")
+            div
+              p Property Address:
+              span(class="dummy" name="head_address") DUMMY TEXT
+
+          div(class="boxZero__columnLeft-row2")
+            div
+              p City:
+              span(class="dummy" name="head_city") DUMMY TEXT
+          
+            div
+              p State:
+              span(class="dummy" name="head_state") DUMMY TEXT
+            
+            div
+              p ZIP:
+              span(class="dummy" name="head_zip") DUMMY TEXT
+        
+        div(class="boxZero__columnRight")
+          div
+            p Policy Number:
+            span(class="dummy" name="policyNumber") DUMMY TEXT
+
+          div
+            p Date of Loss:
+            span(class="dummy" name="dateOfLoss") DUMMY TEXT
+
+      div(class="boxRisk")
+        div(class="boxRisk__left")
+          div(class="text_rotate") RISK CONTINUED
+
+        div(class="boxRisk__right")
+          div(class="boxRisk__right--row1")
+            div
+              p FOUNDATION STRUCTURE:
+
+            div 
+              p PILES:
+
+              div
+                span(class="checkboxDummy" name="pilesWoodPost")
+                p Wood post
+
+              div
+                span(class="checkboxDummy" name="pilesConcreate") 
+                p Concrete slab
+
+              div
+                span(class="checkboxDummy" name="pilesSteel")
+                p Steel
+
+              div
+                p Other
+                span(class="dummy" name="pilesOther") DUMMY TEXT
+
+            div
+              p PIERS:
+
+              div
+                span(class="checkboxDummy" name="piersConcreate")
+                p Reinforced concrete
+
+              div
+                span(class="checkboxDummy" name="piersReBlock")
+                p Reinforced block
+
+              div
+                span(class="checkboxDummy" name="piersUnBlock")
+                p Unreinforced block
+              
+              div
+                span(class="checkboxDummy" name="piersBrick")
+                p Brick
+
+              div
+                span(class="checkboxDummy" name="piersCheckOther")
+                p Other
+                span(class="dummy" name="piersInputOther") DUMMY TEXT
+
+            div
+              p WALLS:
+
+              div
+                span(class="checkboxDummy" name="wallsConcrete")
+                p Reinforced concrete
+              
+              div
+                span(class="checkboxDummy" name="wallsBlock")
+                p Block
+
+              div
+                span(class="checkboxDummy" name="wallsUnBlock")
+                p Unreinforced block
+
+              div
+                span(class="checkboxDummy" name="wallsConcreateShear")
+                p Reinforced concrete shear
+
+              div
+                span(class="checkboxDummy" name="wallsPlywood")
+                p Treated plywood
+
+            div
+              div
+                span(class="checkboxDummy" name="wallsBrick")
+                p Brick
+              
+              div
+                span(class="checkboxDummy" name="wallsCheckboxOther")
+                p Other
+                span(class="dummy" name="wallsInputOther") DUMMY TEXT
+
+          div(class="boxRisk__right--row2")
+            div(class="boxRisk__right--row2-col1")
+              div EXTERIOR WALL STRUCTURE:
+
+              div
+                div
+                  span(class="checkboxDummy" name="wallStructReConcrete") 
+                  p Reinforced concrete
+
+                div
+                  span(class="checkboxDummy" name="wallStructConcreteBlock")
+                  p Concrete block
+
+                div
+                  span(class="checkboxDummy" name="wallStructWood")
+                  p Wood stud
+
+              div
+                div
+                  span(class="checkboxDummy" name="wallStructSteelGrass")
+                  p Steel and glass
+
+                div
+                  span(class="checkboxDummy" name="wallStructBrickStone")
+                  p Brick and stone
+
+              div
+                span(class="checkboxDummy" name="wallStructCheckOther")
+                p Other
+                span(class="dummy" name="wallStructInputOther") DUMMY TEXT
+
+            div(class="boxRisk__right--row2-col2")
+              div EXTERIOR WALL SURFACE TREATMENT:
+
+              div
+                div
+                  span(class="checkboxDummy" name="wallSurfUnfinished")  
+                  p Unfinished
+
+                div
+                  span(class="checkboxDummy" name="wallSurfStoneBrick")
+                  p Stone or brick veneer
+
+                div
+                  span(class="checkboxDummy" name="wallSurfStucco")
+                  p Stucco
+
+              div
+                div  
+                  span(class="checkboxDummy" name="wallSurfWood")
+                  p Wood siding
+
+                div
+                  span(class="checkboxDummy" name="wallSurfMetal")
+                  p Metal sheathing/siding        
+
+              div
+                div
+                  span(class="checkboxDummy" name="wallSurfVinyl")
+                  p Vinyl sheathing/siding
+
+                div
+                  span(class="checkboxDummy" name="wallSurfCheckOther")
+                  p Other
+                  span(class="dummy" name="wallSurfInputOther") DUMMY TEXT
+
+          div(class="boxRisk__right--row3")
+            div(class="boxRisk__right--row3-col1")
+              div CONTENTS ARE:
+
+              div
+                span(class="checkboxDummy" name="houseHold")
+                p Household
+              
+              div
+                span(class="checkboxDummy" name="otherThanHouseHold")
+                p Other than household
+
+            div(class="boxRisk__right--row3-col2")
+              div CONTENTS LOCATED IN:
+
+              div
+                div
+                  span(class="checkboxDummy" name="basement")
+                  p Basement
+
+                div
+                  span(class="checkboxDummy" name="firstFloor")
+                  p First floor
+
+                div
+                  span(class="checkboxDummy" name="basementFirstFloor")
+                  p Basement and first floor
+
+              div
+                div
+                  span(class="checkboxDummy" name="firstFloorAbove")
+                  p First floor and above
+
+                div
+                  span(class="checkboxDummy" name="secondFloor")
+                  p Second floor and above
+
+          div(class="boxRisk__right--row4")
+            div
+              p Nearest body of water to the insured building:
+              span(class="dummy" name="nearestBody") DUMMY TEXT
+
+            div
+              p Distance to the insured building:
+              span(class="dummy" name="distanceInsuredBuilding") DUMMY TEXT
+
+      div(class="boxOrigin")
+        div(class="boxOrigin__left")
+          div(class="text_rotate") ORIGIN
+
+        div(class="boxOrigin__right")
+          div(class="boxOrigin__right-row1")
+            div
+              div 
+                p Was there a general and temporary condition of flooding?
+
+            div
+              div
+                span(class="checkboxDummy" name="conditionFloodingNo")
+                p No (Explain fully under Remarks)
+
+              div
+                span(class="checkboxDummy" name="conditionFloodingYes") 
+                p Yes (Indicate cause of loss below)
+
+            div
+              div
+                p Cause of loss:
+              
+              div
+                span(class="checkboxDummy" name="tidewaterOverflow")
+                p Tidewater overflow
+
+              div
+                span(class="checkboxDummy" name="steamRiverLake")
+                p Stream, river, or lake overflow
+
+              div
+                span(class="checkboxDummy" name="alluvial")
+                p Alluvial fan overflow
+
+              div
+                span(class="checkboxDummy" name="accumulation")
+                p Accumulation of rainfall or snowmelt
+
+            div
+              div
+                p Flood characteristics:
+
+              div
+                span(class="checkboxDummy" name="velocityFlow")
+                p Velocity flow
+
+              div
+                span(class="checkboxDummy" name="lowVelocity")
+                p Low velocity flow or ponding
+
+              div
+                span(class="checkboxDummy" name="waveAction")
+                p Wave action
+
+              div
+                p Was there Erosion?
+
+              div
+                span(class="checkboxDummy" name="erosionYes")
+                p Yes
+              
+              div
+                span(class="checkboxDummy" name="erosionNo")
+                p No
+
+          div(class="boxOrigin__right-row2")
+            div
+              div
+                p Did other than natural cause contribute to flooding?
+
+                div
+                  span(class="checkboxDummy" name="naturalCauseYes")
+                  p Yes
+
+                div
+                  span(class="checkboxDummy" name="naturalCauseNo")
+                  p No
+            em If yes, complete Cause for Loss and Subrogation Report form (FF 086-0-16).
+
+          div(class="boxOrigin__right-row3")
+            div(class="boxOrigin__right-row3-left")
+              div(class="boxOrigin__right-row3-left--row1")
+                div
+                  p DATE/TIME WATER ENTERED BUILDING:
+                  div
+                    div
+                      p Date:
+                      span(class="dummy" name="enteredDate") DUMMY TEXT
+                    div
+                      p Time:
+                      span(class="dummy" name="enteredTime") DUMMY TEXT
+                    div
+                      span(class="checkboxDummy" name="enteredAM")
+                      p AM
+                    div
+                      span(class="checkboxDummy" name="enteredPM")
+                      p PM
+
+                  p DATE/TIME WATER RECEDED FROM BUILDING:
+                  div
+                    div
+                      p Date:
+                      span(class="dummy" name="recededDate") DUMMY TEXT
+                    div
+                      p Time:
+                      span(class="dummy" name="recededTime") DUMMY TEXT
+                    div
+                      span(class="checkboxDummy" name="recededAM")
+                      p AM
+                    div
+                      span(class="checkboxDummy" name="recededPM")
+                      p PM                    
+                  
+              div(class="boxOrigin__right-row3-left--row2")
+                div
+                  div
+                    p LENGTH OF TIME WATER REMAINED IN BUILDING:
+                  div
+                    span(class="dummy" name="remainedDays") DUMMY TEXT
+                    p Days/
+                    span(class="dummy" name="remainedHours") DUMMY TEXT
+                    p Hours/
+                    span(class="dummy" name="remainedMin") DUMMY TEXT
+                    p Minutes
+
+            div(class="boxOrigin__right-row3-right")
+              div(class="boxOrigin__right-row3-right--row1")
+                div
+                  p WATER/WAVE HEIGHT IN INCHES:
+                div
+                  p Main Building - Dwelling or Commercial Building:
+
+                div
+                  div
+                    p Exterior:
+                    span(class="dummy" name="buildingExterior") DUMMY TEXT
+
+                  div
+                    p Interior:
+                    span(class="dummy" name="buildingInterior") DUMMY TEXT
+
+
+              div(class="boxOrigin__right-row3-right--row2")
+                div
+                  p Detached Garage:
+                
+                div
+                  div
+                    p Exterior:
+                    span(class="dummy" name="garageExterior") DUMMY TEXT
+
+                  div
+                    p Interior:
+                    span(class="dummy" name="garageInterior") DUMMY TEXT
+
+      div(class="footer")
+        div(class="footer__left")
+          div
+            p Date:
+            span(class="dummy" name="footerDate") DUMMY TEXT
+
+        div(class="footer__right")
+          div
+            p Adjuster's Signature:
+            span(class="dummy" name="adjusterSignature") DUMMY TEXT
+          
+          div
+            p Flood Control Number:
+            span(class="dummy" name="floodControlNumber") DUMMY TEXT
+
+    div(class="footer-bottom")
+      p FEMA FORM 086-0-13 (04/17)
+      p Page 2 of 3
+
+
+
+              
