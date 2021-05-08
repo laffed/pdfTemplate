@@ -1,0 +1,335 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title Selective ACH
+
+    style.
+      :root {
+      --bigFont: 15pt;
+      --mediumFont: 10pt;
+      --smallFont: 8pt;
+      --textSizeForm: 9.5pt;
+      }
+
+      *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding:0;
+      }
+
+      body { font-family: Arial, Helvetica, sans-serif;}
+
+      /** HELPERS AND STYLE & PADDING */
+      .text_BoldUnderline {
+      font-weight: bold;
+      text-decoration: underline;
+      }
+      .text_bold {font-weight: bold;}
+
+      .line_middle {
+      border: 1px solid black;
+      margin-bottom: 10px;
+      margin-top: 5px;
+      }
+
+
+      .placeholderInput {
+      display: inline-block;
+      white-space: nowrap; 
+      overflow: hidden;
+      text-overflow: ellipsis; 
+      margin-left: 5px;
+      margin-right: 5px;
+      border-bottom: 1px solid black;
+      }
+
+      .sectionForm > div:not(:last-child) {
+      padding-bottom: 5px;
+      /* background-color: yellow; */
+      /* border-bottom: 1px solid black; */
+      }
+      .paragraphGrid > p:not(:last-child) {
+      padding-bottom: 10px;
+      }
+
+      .paragraphGrid {
+      margin-top: 5px;
+      }
+
+      .pNameMoney {
+      display: flex;
+      margin: 8px 0;
+      }
+
+      span[name="amount"]::before {
+      content: '\0024';
+      }
+
+      .cellPhone::after {
+      content: '\0023';
+      margin: 0 2px;
+      font-size: 12px;
+      }
+
+      .cellPhone::before {
+      content: '\002A \002A';
+      margin: 0 3px;
+      font-size: 12px;
+      }
+
+      .ifApplicable {
+      font-weight: normal;
+      font-size: var(--mediumFont);
+      margin-left: 5px;
+      }
+
+      .ifApplicable::before {
+      content: '\0028';
+      }
+
+      .ifApplicable::after{
+      content: '\0029';
+      }
+
+      /** END */
+
+      .page { 
+      display: flex;
+      flex-direction: column;
+      width: 23cm;
+      margin: 0 auto;
+      text-align: justify;
+      font-size:14px;
+      }
+
+      .header {
+      display: grid;
+      grid-template-columns: 25% 1fr;
+      justify-items: center;
+      align-items: center;
+
+      margin-bottom: 30px;
+      }
+
+      .header_logo-img {
+      width: 200px;
+      object-fit: cover;
+      margin-right: 20px;
+      }
+
+      .header_title, .scndTitle {
+      font-size: var(--bigFont);
+      font-weight: bold;
+      }
+
+      .unorderedLi li {
+      display: flex;
+      list-style: none;
+      align-items: center;
+      line-height: 0.8;
+      }
+
+      .unorderedLi li::before {
+      content: '\2022';
+      display: inline-block;
+      font-size: 30px;
+      margin-left: 20px;
+      margin-right: 10px;
+      }
+
+      .paragraphGrid {
+      display: grid;
+      grid-template-columns: 40px 1fr;
+      }
+
+      .sectionForm {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(6, auto);
+      margin-top: 5px;
+      }
+
+      .formRow1, .formRow2 {
+      display: grid;
+      grid-template-columns: max-content 1fr;
+      }
+
+      .formRow3, .formRow5 {
+      display: grid;
+      grid-template-columns: max-content 2fr 2fr 1fr;
+      grid-template-rows:repeat(2, 1fr);
+      }
+
+      .secondRowName {
+      grid-row: 2 / 3;
+      grid-column: 2 /3;
+      }
+
+      .secondRowSignature {
+      grid-row: 2 / 3;
+      grid-column: 3 / 4;
+      }
+
+      .secondRowDate {
+      grid-row: 2 / 3;
+      grid-column: 4 / 5;
+      }
+
+      .secondRowName, .secondRowDate, .secondRowSignature {
+      font-size: var(--smallFont);
+      font-weight: bold;
+      margin-left: 5px;
+      margin-right: 5px;
+      }
+
+      .formRow4, .formRow6 {
+      display: grid;
+      grid-template-columns: max-content 1fr max-content 1fr;
+      }
+
+      .text_footer {
+      margin-top: 10px;
+      font-size: var(--smallFont);
+      }
+
+  body
+    div(class="page")
+
+      section(class="header")
+        img(src='../../../assets/imgs/selective-insurance-logo.png' class='header_logo-img')
+        div(class="header_title")
+          p NFIP Advance Payment Electronic Funds Transfer (EFT) Process
+      
+      section(class="half_page")
+        p You have elected to receive your flood claim payment(s) via EFT directly into your bank account. In order to receive your claim payment(s) by EFT, 
+          span(class="text_BoldUnderline") you must have:
+        br
+
+        ul(class="unorderedLi")
+          li  A valid active checking account with a U.S. based bank;
+          li  A valid active email account;
+          li  An active cell phone number that accepts text messaging and;
+          li  Access to the internet. (A gaming system such as Xbox, PlayStation, etc. will not work)
+
+        br
+        p In order to receive your funds, you must successfully enroll in this program by following the below steps.
+  
+        div(class="paragraphGrid")
+          span(class="bold_text") 1.
+          p
+            | After you have submitted a completed Advance Payment Request Form (below), you will receive an enrollment email with 
+            span(class="text_BoldUnderline") the Subject line "Selective Flood Claim Payment Information". This email will be from Selective Flood@vpayusa.com. 
+            | The enrollment email will be sent to the email address provided in the Advance Payment Request Form 
+            | within approximately 3 business days following Selective's review of documentation from the
+            | adjusting firm. This time frame may be expanded during a large flooding event. Remember to check your "junk" and/or "spam” folder for this email.
+
+          span(class="bold_text") 2.
+          p
+            | Upon your receipt of the enrollment email, click on the link in the email to begin the enrollment process. 
+            span(class="text_bold") You will be given 3 days from your receipt to successfully complete enrollment. 
+            | If for any reason you are unable to complete the EFT enrollment process, the emailed link will become inactive after 3 days and your claim payment 
+            | check will be mailed to the mailing address shown on your policy.
+              
+          span(class="bold_text") 3.
+          p 
+            | After clicking the link, you will be required to create a password. Password creation instructions will be provided online. Next, to help verify identity, a text message 
+            | containing a 6-digit code will be sent to the cell phone number provided on the Advance Payment Request Form. 
+            span(class="text_bold") You must enter this code into the webpage within 5 minutes of receipt. 
+            | If a valid code is not successfully entered within 3 attempts, your claim payment check will be
+            | mailed to the mailing address shown on your policy.
+
+          span(class="bold_text") 4.
+          p
+            | After verifying your identity, you will be taken to the Terms & Conditions screen for review and acknowledgement. Next you will need to enter your bank routing and 
+            | checking account numbers. 
+            span(class="text_bold") You will have 3 attempts to enter a valid routing and account number. 
+            | If you do not enter valid information after 3 attempts, the emailed link 
+            | will become inactive and your claim payment check will be mailed to the mailing address shown on your policy.
+
+          span(class="bold_text") 5.
+          p
+            | If the information is entered successfully, you will be taken to a confirmation screen and a confirmation email will be sent to you with a summary of the payment timing and details.
+
+          span(class="bold_text") 6.
+          p
+            |If you have any questions about the 
+            span(class="text_bold") EFT process or have not received the enrollment email, please contact our customer service team at (844) 343-3690. 
+            |If you have questions specific to the handling of your flood claim, please call our 
+            span(class="text_bold") claims team at (877) 348-0552.
+
+        hr(class="line_middle")
+          
+      section(class="scondHalf")
+        div(class="scndTitle")
+          p ADVANCE PAYMENT REQUEST FORM
+        br
+        div
+          p
+            | By signing this form, you give Selective authority to deposit to your account the amount indicated below. This is permission for a single transaction only, and does not provide authorization for any additional unrelated credits to your account.
+
+          p(class="pNameMoney")
+            |I
+            span(class="placeholderInput" name="name") Name
+            | authorize Selective to credit my bank account
+            span(class="placeholderInput hideInput" name="amount") Money
+            | (max. $5,000).
+            
+          p
+           |This payment is for Advance Payment of Flood Insurance Loss and must be accompanied by a signed Advance Payment Request Form. 
+           span(class="text_bold") Payments toward Building loss where Lienholder is listed as payee on policy are not eligible for EFT process.
+
+      section(class="sectionForm")
+        div(class="formRow1")
+          p(class="text_bold") Policy Number:
+          span(class="placeholderInput" name="policyNumber") 12345
+
+        div(class="formRow2")
+          p(class="text_bold") Mailing Address:
+          span(class="placeholderInput" name="mailingAddress") Street Example
+
+        div(class="formRow3")
+          p(class="text_bold") Primary insured
+
+          span(class="placeholderInput" name="primaryName") NAME
+
+          span(class="placeholderInput" name="primarySignature") my signature
+
+          span(class="placeholderInput" name="primaryDate") timestamp
+          
+          span(class="secondRowName") Print Name
+          span(class="secondRowSignature") Signature
+          span(class="secondRowDate") Date
+
+        div(class="formRow4")
+          p(class="text_bold") E-mail address:
+
+          span(class="placeholderInput" name="primaryEmail") example@email.com
+
+          p(class="cellPhone text_bold") Cell phone
+          span(class="placeholderInput" name="primaryPhone") primary phone
+
+        div(class="formRow5")
+          p(class="text_bold") Additional insured
+            em(class="ifApplicable") if applicable
+          span(class="placeholderInput" name="additionalName") Additional Name
+
+          span(class="placeholderInput" name="additionalSignature") Additional Sign
+
+          span(class="placeholderInput" name="additionalDate") timestamp
+
+          span(class="secondRowName") Print Name
+          span(class="secondRowSignature") Signature
+          span(class="secondRowDate") Date
+
+        div(class="formRow6")
+          p(class="text_bold") E-mail address:
+          span(class="placeholderInput") Additional Email
+
+          p(class="cellPhone text_bold") Cell phone
+          span(class="placeholderInput" name="additionalPhone") 0123
+
+      em(class="text_footer") 
+        | ** I affirm that this is my Cell Phone #, and I agree to receive text message communications at this Cell Phone # from Selective and its contractors concerning my insurance claim, including electronic funds transfer enrollment communications. Standard text fees apply.

@@ -1,0 +1,2208 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="pg1_viewport" content="width=device-width, initial-scale=1.0")
+    title FEMA
+
+    style.
+      :root {
+      --bigFont: 12pt;
+      --mediumFont: 10pt;
+      --smallFont: 8pt;
+      --textSizeForm: 9pt;
+      --paddingSmall: 5px;
+      }
+
+      *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding:0;
+      }
+
+      body { font-family: Arial, Helvetica, sans-serif;}
+
+      .pg1_inputPlaceholder {
+      display: inline-block;
+      white-space: nowrap; 
+      overflow: hidden;
+      text-overflow: ellipsis; 
+      margin-left: 5px;
+      margin-right: 5px;
+      border-bottom: 1px solid black;
+      line-height: normal;
+      }
+
+      .pg1_hideInputPlaceholder {
+      display: inline-block;
+      width:auto;
+      align-self: end;
+      margin-left: 5px;
+      margin-right: 5px;
+      margin-bottom: 6px;
+      border-bottom: 1px solid black;
+      }
+
+      .pg1_inputCheckbox {
+      display: block;
+      height: 10px;
+      width: 10px;
+      margin-left: 5px;
+      margin-right: 5px;
+      border:1px solid black;
+      }
+
+      .pg1_inputCheckboxActive {
+      display: block;
+      height: 10px;
+      width: 10px;
+      padding-left: 5px;
+      padding-right: 5px;
+      background-color:black;
+      }
+
+      .pg1_page {
+      display: flex;
+      flex-direction: column;
+      width: 21cm;
+      height: 29.7cm;
+      margin: auto;
+      margin-bottom:7rem;
+      line-height: 1;
+      }
+
+      .pg1_gridBoxHeader {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      justify-items: center;
+      line-height: 1;
+      }
+
+      .pg1_gridBoxHeader-col1 {
+      grid-column: 1 / 6;
+      text-align: center;
+      }
+      .pg1_gridBoxHeader-col1_headingSmall {
+      font-size: var(--mediumFont);
+      }
+
+      .pg1_gridBoxHeader-col1__headingNormal {
+      font-size: var(--bigFont);
+      margin-top:5px;
+      margin-bottom: 5px;
+      }
+
+      .pg1_gridBoxHeader-col1-headingBold {
+      font-size: var(--bigFont);
+      font-weight: bold;
+      margin-bottom: 10px;
+      }
+
+
+      .pg1_gridBoxHeader-col2 {
+      grid-column: 7 / 8;
+      min-width: max-content;
+      font-size: var(--smallFont);
+      text-align: right;
+      align-self: end;
+      padding-bottom:5px;
+      }
+
+      /** HELEPRS */
+      .pg1_bold_text {font-weight: bold;}
+      .pg1_marginTopHelper {margin-top: 20px;}
+
+      .pg1_text_rotate {
+      -ms-transform: rotate(-90deg);
+      transform: rotate(-90deg);
+      }
+
+
+      /** START MARGINS AND TEXT STYLE*/
+
+      .pg1_gridSecondBox__rightColumn-row1,
+      .pg1_gridFourthBox3__rightColumn-Grid > div,
+      .pg1_gridFourthBox4__rightColumn-Grid > div,
+      .pg1_gridFourthBoxLAST-col-left > div > p:first-child,
+      .pg1_gridFourthBoxLAST-col-left > div:not(:first-child),
+      .pg1_gridFourthBoxLAST-col-right
+      {
+      margin-left: var(--paddingSmall);
+      }
+
+      .pg1_gridFourthBox4__rightColumn-Grid > div {
+      justify-content: space-between;
+      margin-right: 5px;
+      }
+
+      .pg1_gridFourthBox4__rightColumn-Grid > div > span {
+      display: flex;
+      align-items: center;
+      }
+
+
+      .pg1_gridFourthBox3__rightColumn-Grid  > div > span {
+      display: flex;
+      padding-left: 40px ;
+      }
+
+      .pg1_gridFourthBoxLAST-col-right > div:not(:first-child) {
+      justify-content: space-between;
+      margin-right: 5px;
+      }
+
+      .pg1_gridFourthBoxLAST-col-left > div > div > span {
+      display: flex;
+      }
+
+      .pg1_gridFourthBox2__rightColumn-Grid > div {
+      align-items: center;
+      }
+
+      .pg1_gridFourthBox2__rightColumn-Grid > div > p:not(:first-child) {
+      margin-left: 60px;
+
+      }
+
+      .pg1_gridFirstBox__rightColumn > div,
+      .pg1_gridSecondBox__rightColumn > div:not(:first-child) {
+      margin-right: 5px;
+      padding-top:10px;
+      /* background-color: aqua; */
+      }
+
+      .pg1_gridThirdBox__row2-leftColumn em {
+      line-height: 1.4;
+      /* background-color: blueviolet; */
+      }
+
+      .pg1_inline-flex > span {
+      display: flex;
+      align-items: center;
+      }
+
+      .pg1_gridFirstBox__leftColumn {padding-left: 5px;}
+
+      span[name="buildingInput"]::before,
+      span[name="photoInput"]::before,
+      span[name="contentsInput"]::before,
+      span[name="narrativeInput"]::before
+      { content: "( ";}
+
+
+      span[name="buildingInput"]::after,
+      span[name="photoInput"]::after,
+      span[name="contentsInput"]::after  
+      { content: " )";}
+
+      span[name="narrativeInput"]::after { content: " pages)";}
+
+      .pg1_gridSecondBox__rightColumn,
+      .pg1_gridThirdBox__row2-leftColumn,
+      .pg1_gridThirdBox__middleColumn,
+      .pg1_gridFourthBox__rightColumn {
+      border-left: 2px solid black;
+      }
+
+      .pg1_gridThirdBox__middleColumn-left > *,
+      .pg1_gridThirdBox__middleColumn-right > *,
+      .pg1_gridThirdBox__rightColumn-left > *,
+      .pg1_gridThirdBox__rightColumn-right > * {
+        padding-top:10px;
+      }
+
+      .pg1_gridThirdBox__middleColumn-right > div {
+        padding-top:10px;
+      }
+
+      .pg1_gridSecondBox__rightColumn,
+      .pg1_gridFourthBox__rightColumn{
+        padding-top:5px;
+      }
+      /** END MARGINS AND TEXT STYLE*/
+
+
+      /** FIRST BOX */
+      .pg1_gridFirstBox {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      font-size: var(--textSizeForm);
+
+      border-left:2px solid black;
+      border-right:2px solid black;
+      border-top:2px solid black;
+      border-bottom:2px solid black;
+      }
+
+      .pg1_gridFirstBox-paragraph {
+      grid-column: 1 / 8;
+      text-align: center;
+      font-style: italic;
+
+      padding: 5px 0;
+
+      border-bottom: 2px solid black;
+      }
+
+
+      /* *LEFT COLUMN ONE */
+
+      .pg1_gridFirstBox__leftColumn {
+      grid-column: 1 / 5;
+      grid-row: 2 / 3;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-top: 10px;
+      }
+
+      .pg1_gridFirstBox__leftColumn > div, .pg1_gridFirstBox__rightColumn > div,
+      .pg1_gridSecondBox__rightColumn > div, .pg1_gridThirdBox__middleColumn > div > div:last-child,
+      .pg1_gridThirdBox__rightColumn > div > div:last-child, .pg1_gridThirdBox__row2-rightColumn > div:first-child > p,
+      .pg1_gridThirdBox__row2-rightColumn > div:not(:first-child) > *,
+      .pg1_gridThirdBox__row2-leftColumn > div:first-child,
+      .pg1_gridFourthBox__rightColumn-Grid--right > div, .pg1_gridFourthBox2__rightColumn-Grid > div,
+      .pg1_gridFourthBox3__rightColumn-Grid > div {padding-bottom:5px;}
+
+      .pg1_gridThirdBox__row2-rightColumn > div {padding-top:10px;}
+
+      .pg1_gridFourthBox4__rightColumn-Grid > div,
+      .pg1_gridFourthBoxLAST-col-left > div > * {padding: 10px 0}
+
+      .pg1_gridFourthBoxLAST-col-right > div:last-child {padding-bottom: 5px}
+
+      .pg1_gridFirstBox__leftColumn > *,
+      .pg1_gridFirstBox__rightColumn > *
+      {
+      display: flex;
+      //- align-items: center;
+      }
+
+      .pg1_gridFirstBox__rightColumn {padding-left:10px}
+
+      .pg1_gridFirstBox__leftColumn > div p,
+      .pg1_gridFirstBox__rightColumn > div p
+      {
+      white-space: nowrap;
+      }
+
+      .pg1_gridFirstBox__leftColumn-row3-col {
+      display: flex;
+      align-items: center;
+      }
+
+      .pg1_gridFirstBox__leftColumn-row3-col:first-child {
+      width:60%;
+      }
+
+      .pg1_gridFirstBox__leftColumn-row3-col:not(:first-child) {
+      flex: 1;
+      }
+
+      .pg1_gridFirstBox__leftColumn > div span,
+      .pg1_gridFirstBox__rightColumn > div span {
+      display: inline-block;
+      width: 100%;
+      }
+
+
+      /** RIGHT Column*/
+
+      .pg1_gridFirstBox__rightColumn {
+      grid-column: 5 / 8;
+      grid-row: 2 / 3;
+      padding-top: 10px;
+
+      }
+
+      /*** SECOND BOX*/
+      .pg1_gridSecondBox {
+      display: grid;
+      grid-template-columns: 30px 1fr;
+      font-size: var(--textSizeForm);
+      border-left: 2px solid black;
+      border-right: 2px solid black;
+      }
+
+      .pg1_gridSecondBox__leftColumn{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      }
+
+      .pg1_gridSecondBox__rightColumn-row2,
+      .pg1_gridSecondBox__rightColumn-row3{
+      display: flex;
+      justify-content: space-between;
+      align-content: center;
+      }
+
+      .pg1_gridSecondBox__rightColumn-row2 > div,
+      .pg1_gridSecondBox__rightColumn-row3 > div {
+      display: flex;
+      white-space: nowrap;
+      }
+
+      .pg1_gridSecondBox__rightColumn > div > div,
+      .pg1_gridThirdBox__middleColumn-left > div,
+      .pg1_gridThirdBox__rightColumn-left > div,
+      .pg1_gridThirdBox__rightColumn-right > div,
+      .pg1_gridFourthBox__rightColumn-Grid--right > div,
+      .pg1_gridFourthBox__rightColumn-Grid--right > div > div,
+      .pg1_gridFourthBox2__rightColumn-Grid > div > span,
+      .pg1_gridFourthBox3__rightColumn-Grid > div > span,
+      .pg1_gridFourthBoxLAST-col-left > div > span,
+      .pg1_gridFourthBoxLAST-col-left > div > div > span,
+      .pg1_inline-flex,
+      .pg1_gridFourthBox3__rightColumn-Grid > div,
+      .pg1_gridFourthBox4__rightColumn-Grid > div {
+      align-items: center;
+      }
+
+      /** THIRD BOX */
+      .pg1_gridThirdBox {
+      display: grid;
+      grid-template-columns: 30px repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      font-size: var(--textSizeForm);
+      border-left: 2px solid black;
+      border-top: 2px solid black;
+      border-bottom: 2px solid black;
+      border-right: 2px solid black;
+      }
+
+      .pg1_gridThirdBox__row2-rightColumn {
+        padding-right: 5px;
+      }
+
+      .pg1_gridThirdBox__leftColumn{
+      /* grid-row: 1/ 3; */
+      grid-column: 1 / 2 ;
+      grid-row: 1 / 3;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      }
+
+      .pg1_gridThirdBox__middleColumn {
+      grid-column: 2 / 3;
+      grid-row: 1/ 2;
+      border-right: 1px solid black;
+      border-bottom: 1px solid black;
+
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      }
+
+      .pg1_gridThirdBox__rightColumn {
+      grid-column: 3 / 4;
+      grid-row: 1/ 2;
+      border-bottom: 1px solid black;
+
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      }
+
+      .pg1_gridThirdBox__row2-leftColumn {
+      grid-column: 2 / 3;
+      border-right: 1px solid black;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: var(--paddingSmall);
+      }
+
+      .pg1_gridThirdBox__row2-rightColumn {
+      grid-column: 3 / 4;
+
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      text-align: center;
+      }
+
+      .pg1_gridThirdBox__row2-rightColumn > div:first-child {
+      padding-left: 5px;
+      margin-bottom:5px;
+      }
+
+      .pg1_gridThirdBox__row2-rightColumn > div:first-child {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: left;
+      }
+
+      .pg1_gridThirdBox__row2-rightColumn > * span {
+      display: flex;
+      align-items: center;
+      }
+
+
+      .pg1_gridThirdBox__middleColumn-left > div,
+      .pg1_gridThirdBox__middleColumn-right > div,
+      .pg1_gridThirdBox__rightColumn-left > div,
+      .pg1_gridThirdBox__rightColumn-right > div,
+      .pg1_inline-flex
+      {
+      display: flex;
+      }
+
+      .pg1_gridThirdBox__middleColumn-left {border-right:1px solid black; padding-left: var(--paddingSmall);}
+
+      .pg1_gridThirdBox__middleColumn-right,
+      .pg1_gridThirdBox__rightColumn-right {padding-left: var(--paddingSmall);}
+
+      .pg1_gridThirdBox__rightColumn-left {border-right:1px solid black; padding-left: var(--paddingSmall);}
+
+
+      /** FOURTH ROW */
+      .pg1_gridFourthBox {
+      display: grid;
+      grid-template-columns: 30px 1fr;
+      grid-template-rows: auto;
+      font-size: var(--textSizeForm);
+      white-space: nowrap;
+
+      border-left: 2px solid black;
+      border-right: 2px solid black;
+      }
+
+      .pg1_gridFourthBox__leftColumn {
+      grid-column: 1 / 2 ;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      /* transform: rotate(-90deg); */
+      }
+
+      .pg1_gridFourthBox__rightColumn {
+      grid-column: 2 / 6 ;
+      grid-row: 1 / 2;
+      display: grid;
+      }
+
+      .pg1_gridFourthBox__rightColumn-Grid {
+      grid-row: 1 / 2;
+      padding: 10px 0;
+
+      display: grid;
+      grid-template-columns: 25% 1fr;
+      }
+
+      .pg1_gridFourthBox__rightColumn-Grid--left {
+      grid-column: 1 / 2;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      }
+
+      .pg1_gridFourthBox__rightColumn-Grid--right {
+      grid-column: 2 / 4;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      }
+      .pg1_gridFourthBox__rightColumn-Grid--right > div,
+      div.pg1_gridFourthBox__rightColumn-Grid--right__FELX,
+      div.pg1_gridFourthBox__rightColumn-Grid--right__FLEX > * {
+      display: flex;
+      }
+      .pg1_gridFourthBox__rightColumn-Grid--right > div {
+        padding-bottom:10px;
+      }
+
+      .pg1_gridFourthBox__rightColumn-Grid--right__FLEX > div {
+      margin-right:10px;
+      }
+
+      .pg1_gridFourthBox__rightColumn-Grid {
+      border-bottom: 2px solid black;
+      }
+
+      .pg1_gridFourthBox2__rightColumn-Grid {
+      display: flex;
+      flex-direction: column;
+      border-bottom: 1px solid black;
+      padding: 10px 0 10px 5px;
+      }
+
+      .pg1_gridFourthBox2__rightColumn-Grid > div,
+      .pg1_gridFourthBox2__rightColumn-Grid > div > span
+      {
+      display: flex;
+      }
+
+      .pg1_gridFourthBox3__rightColumn-Grid,
+      .pg1_gridFourthBox4__rightColumn-Grid {
+      display: flex;
+      flex-direction: column;
+      border-bottom: 1px solid black;
+      }
+
+      .pg1_gridFourthBox3__rightColumn-Grid > div,
+      .pg1_gridFourthBox4__rightColumn-Grid > div
+      {
+      display: flex;
+      }
+
+      .pg1_gridFourthBox3__rightColumn-Grid {
+        padding:10px 0;
+      }
+
+      .pg1_gridFourthBoxLAST__rightColumn-Grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      }
+
+      .pg1_gridFourthBoxLAST-col-left {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(2, 1fr);
+      border-right:1px solid black
+      }
+
+      .pg1_gridFourthBoxLAST-col-left > div,
+      .pg1_gridFourthBoxLAST-col-left > div > *,
+      .pg1_gridFourthBoxLAST-col-right > div,
+      .pg1_gridFourthBoxLAST-col-right > div > div
+      {
+      display: flex;
+      align-items: center;
+      }
+
+      .pg1_gridThirdBox__middleColumn-right > div > *{
+      display: flex;
+      align-items: center;
+
+      }
+
+      .pg1_gridFourthBoxLAST-col-left > div:first-child {
+      border-bottom: 1px solid black;
+      }
+
+      .pg1_gridFourthBoxLAST-col-right > div:nth-child(2){
+      align-items: center;
+      }
+
+      .pg1_gridFourthBoxLAST-col-right > div > div {
+      align-items: center;
+      }
+
+      .pg1_gridFourthBoxLAST-col-right {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(2, 1fr);
+      }
+
+      .pg1_footer {
+      font-size: var(--textSizeForm);
+      text-align: center;
+      padding: 10px 0;
+      border-top: 2px solid black;
+      border-left: 2px solid black;
+      border-right: 2px solid black;
+      border-bottom: 2px solid black;
+      }
+
+      .pg1_footer-page {
+      display: flex;
+      justify-content: space-between;
+      font-size: var(--textSizeForm);
+      padding-top: 5px;
+      }
+
+      .pg2_page {
+      display: flex;
+      flex-direction: column;
+      width: 21cm;
+      //- height: 29.7cm;
+      margin: auto;
+      font-size: var(--textSizeForm);
+      line-height:1.1;
+      }
+
+      /** HELEPRS */
+      .pg2_bold_text {font-weight: bold;}
+
+      .pg2_marginTopHelper {margin-top: 20px;}
+
+      .pg2_text_rotate {
+      -ms-transform: rotate(-90deg);
+      transform: rotate(-90deg);
+      }
+
+
+      .pg2_dummy {
+      display: inline-block;
+      white-space: nowrap; 
+      overflow: hidden;
+      text-overflow: ellipsis; 
+      margin-left: 5px;
+      margin-right: 5px;
+      border-bottom: 1px solid black;
+      line-height: normal;
+      }
+
+      .pg2_checkboxDummy {
+      display: block;
+      height: 10px;
+      width: 10px;
+      margin-left: 5px;
+      margin-right: 5px;
+      border:1px solid black;
+      }
+
+
+      /** BOX ZERO */
+
+      .pg2_boxZero {
+      display: grid;
+      grid-template-columns: 65% 35%;
+      white-space: nowrap;
+      border-right: 2px solid black;
+      border-left: 2px solid black;
+      border-top: 2px solid black;
+      }
+
+      .pg2_boxRisk__right--row1 {
+      border-bottom: 1px solid black ;
+      padding: 10px 0;
+      }
+
+      .pg2_boxZero__columnLeft-row1 > div,
+      .pg2_boxZero__columnLeft-row2,
+      .pg2_boxZero__columnLeft-row2 > div,
+      .pg2_boxZero__columnRight > div {
+      display: flex;
+      }
+
+      .pg2_boxZero__columnLeft-row2 > div:first-child {
+      width: 50%;
+      }
+
+      .pg2_boxZero__columnLeft-row2 > div:not(:first-child) {
+      flex: 1;
+      }
+
+      .pg2_boxZero p {
+      padding-right: 5px;
+      }
+
+      .pg2_boxZero__columnLeft-row2 > div:not(:first-child) > p {
+      padding-left: 10px;
+      }
+
+      .pg2_boxZero__columnLeft,
+      .pg2_boxZero__columnRight {
+      padding: 15px 5px;
+      }
+
+      .pg2_boxZero__columnLeft > div,
+      .pg2_boxZero__columnRight > div {
+      padding-bottom: 10px;
+      }
+
+      .pg2_boxZero {
+      border-bottom: 2px solid black;
+      }
+
+
+      /** BOX RISK */
+      .pg2_boxRisk {
+      display: grid;
+      grid-template-columns: 30px 1fr;
+      border-left:2px solid black;
+      border-right:2px solid black;
+
+
+      white-space: nowrap;
+      }
+
+      .pg2_boxRisk__left {
+      grid-column: 1 / 2 ;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-right: 2px solid black;
+      font-weight: bold;
+      }
+
+      .pg2_boxRisk__right {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(2, 1fr) auto auto;
+
+      }
+
+      .pg2_boxRisk__right--row1 > div,
+      .pg2_boxRisk__right--row1 > div > div {
+      display: flex;
+      }
+
+      .pg2_boxRisk__right--row2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      border-bottom: 1px solid black;
+
+      white-space: nowrap;
+      }
+
+      .pg2_boxRisk__right--row2-col1 {
+      border-right: 1px solid black;
+      }
+
+      .pg2_boxRisk__right--row2-col1 > div,
+      .pg2_boxRisk__right--row2-col1 > div > div,
+      .pg2_boxRisk__right--row2-col2 > div,
+      .pg2_boxRisk__right--row2-col2 > div > div,
+      .pg2_boxRisk__right--row3-col1 > div,
+      .pg2_boxRisk__right--row3-col2 > div,
+      .pg2_boxRisk__right--row3-col2 > div > div,
+      .pg2_boxRisk__right--row4 > div {
+      display: flex;
+      }
+
+      .pg2_boxRisk__right--row3 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+
+      border-bottom: 1px solid black;
+      }
+
+      .pg2_boxRisk__right--row3-col1 {
+      border-right: 1px solid black;
+      }
+
+      .pg2_boxRisk__right--row4 {
+      display: grid;
+      grid-template-columns: 55% 40%;
+      white-space: nowrap;
+
+      }
+
+      /** BOX ORIGIN */
+
+      .pg2_boxOrigin {
+      display: grid;
+      grid-template-columns: 30px 1fr;
+      border:2px solid black;
+      white-space: nowrap;
+      }
+
+      .pg2_boxOrigin__left {
+      grid-column: 1 / 2 ;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-right: 2px solid black;
+      font-weight: bold;
+      }
+
+      .pg2_boxOrigin__right {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(3, auto);
+      }
+
+      .pg2_boxOrigin__right-row1 > div,
+      .pg2_boxOrigin__right-row1 > div > div,
+      .pg2_boxOrigin__right-row2 > div,
+      .pg2_boxOrigin__right-row2 > div > div,
+      .pg2_boxOrigin__right-row2 > div > div > div
+      {
+      display :flex;
+      }
+
+      .pg2_boxOrigin__right-row2 {
+      border-bottom: 1px solid black;
+      }
+
+      .pg2_boxOrigin__right-row1 {
+      border-bottom: 1px solid black;
+      }
+
+      .pg2_boxOrigin__right-row3 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      }
+
+      .pg2_boxOrigin__right-row3-left {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(2, 1fr);
+
+      border-right: 1px solid black;
+      border-width: calc(100% + 10px);
+      }
+
+
+      .pg2_boxOrigin__right-row3-left--row1 > div > div,
+      .pg2_boxOrigin__right-row3-left--row1 > div > div > div,
+      .pg2_boxOrigin__right-row3-left--row2 > div > div
+      { 
+      display: flex;
+      }
+
+      .pg2_boxOrigin__right-row3-right {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(2, 1fr);
+      }
+
+      .pg2_boxOrigin__right-row3-right--row1 {
+      display: flex;
+      flex-direction: column;
+      padding-left: 5px;
+      }
+
+      .pg2_boxOrigin__right-row3-right--row1 > div,
+      .pg2_boxOrigin__right-row3-right--row1 > div > div,
+      .pg2_boxOrigin__right-row3-right--row2 > div,
+      .pg2_boxOrigin__right-row3-right--row2 > div > div {
+      display: flex;
+      }
+
+
+
+
+      /** START MARGINS AND PAGE ADJUST */
+
+      .pg2_boxOrigin__right-row3-left--row1 > div > div {
+      /* background-color: bisque; */
+      padding-top: 10px;
+      padding-bottom: 10px;
+      }
+
+      .pg2_boxOrigin__right-row3-left--row1 > div > div *
+      {
+      align-items: center;
+      }
+
+      .pg2_boxOrigin__right-row3-right--row1 > div:not(:first-child) {
+      /* background-color: green; */
+      padding-top: 10px;
+      padding-bottom: 5px;
+      align-items: center;
+      }
+
+      .pg2_boxOrigin__right-row3-left--row2 > div > div:nth-child(2),
+      .pg2_boxOrigin__right-row3-right--row2 > div:nth-child(2)
+      {
+      /* background-color: greenyellow; */
+      padding-top: 10px;
+      padding-bottom: 10px;
+      }
+
+
+
+      .pg2_boxOrigin__right-row2 > div * {
+      align-items: center;
+      }
+
+      .pg2_boxOrigin__right-row2 > *:not(:last-child) {
+      padding-bottom: 20px;
+      }
+
+      .pg2_boxOrigin__right-row1 > div:not(:last-child) { padding-bottom: 20px; }
+
+      .pg2_boxOrigin__right-row1 > div > div {
+      /* background-color: palegoldenrod; */
+      margin-bottom: 5px;
+      align-items: center;
+      }
+
+      .pg2_boxOrigin__right-row3-right--row1 > div:last-child,
+      .pg2_boxOrigin__right-row3-right--row2 > div:last-child
+      {
+      /* background-color: salmon; */
+      justify-content: space-between;
+      }
+
+      .pg2_boxOrigin__right-row3-left--row2 > div > div:last-child > *:not(:last-child) {
+      /* background-color: skyblue; */
+      margin-right:5px;
+      }
+
+      .pg2_boxRisk__right--row4 { padding:10px; }
+
+      .pg2_boxRisk__right--row4 > div:first-child,
+      .pg2_boxRisk__right--row4 > div > * 
+      {padding-right: 10px;}
+
+      .pg2_boxRisk__right--row2-col1,
+      .pg2_boxRisk__right--row2-col2,
+      .pg2_boxRisk__right--row3-col1,
+      .pg2_boxRisk__right--row3-col2 {
+
+      padding-top: 15px;
+      padding-left: 5px;
+      padding-bottom:30px;
+      }
+
+      .pg2_boxRisk__right--row2-col1 > div,
+      .pg2_boxRisk__right--row2-col2 > div,
+      .pg2_boxRisk__right--row3-col1 > div,
+      .pg2_boxRisk__right--row3-col2 > div {
+      padding-bottom: 10px;
+      }
+
+
+      .pg2_boxRisk__right--row2-col2 > div > div,
+      .pg2_boxRisk__right--row3-col2 > div > div,
+      .pg2_boxRisk__right--row2-col1 > div > div,
+      .pg2_boxRisk__right--row2-col1 > div > div > div,
+      .pg2_boxRisk__right--row3-col1 > div
+      {
+      align-items: center;
+      }
+
+      .pg2_boxRisk__right--row1 > div { padding-top: 5px; padding-left: 5px; padding-bottom: 5px;}
+
+      .pg2_boxRisk__right--row1 > div > div {align-items: center;}
+
+      .pg2_boxRisk__right--row1 > div > p { margin-right: 5px; }
+
+      .pg2_boxRisk__right--row1 > div:nth-child(3) > div:last-child {
+      margin-left: 10px
+      }
+
+      .pg2_boxRisk__right--row1 > div:last-child > div:first-child { width: 25%;}
+
+      .pg2_boxRisk__right--row1 > div:last-child > div:last-child {
+      flex:1;
+      margin-right: 10px;
+      }
+
+
+      .pg2_boxRisk__right--row3-col2 > div:not(:first-child),
+      .pg2_boxRisk__right--row2-col2 > div:not(:first-child) {
+      justify-content: space-between;
+      margin-right: 20px;
+      }
+
+      .pg2_boxOrigin__right > div{
+        padding-left: 5px;
+      }
+
+      .pg2_boxOrigin__right-row3 > div {padding-top: 10px;}
+
+      .pg2_boxOrigin__right-row2 {
+        padding: 15px 0;
+      }
+
+      .pg2_boxOrigin__right-row2 > div > div > p {
+        padding-right:10px;
+      }
+
+      .pg2_boxRisk__right--row2-col1 > div:last-child {
+        align-items: center;
+      }
+
+      .pg2_boxOrigin__right-row3-left--row1 > div > div > div:not(:first-child) {
+        padding-left:10px;
+      }
+
+      .pg2_boxOrigin__right-row3-left--row2 > div > div:nth-child(2) {
+        padding-right:5px;
+      }
+
+      .pg2_boxOrigin__right-row3-right--row2 { padding-left: 5px;}
+
+      .pg2_boxOrigin__right-row1 {padding:10px 0;}
+
+      .pg2_boxRisk__right--row1 > div {
+        align-items: center;
+      }
+
+      .footer_main {
+        display: grid;
+        font-size: var(--textSizeForm);
+        grid-template-columns: 30% 1fr;
+
+        align-content: center;
+        border-left:2px solid black;
+        border-right:2px solid black;
+        border-bottom:2px solid black;
+        height:80px;
+      }
+
+      .footer_main__left {
+        display: flex;
+        align-items: center;
+        padding-left:40px;
+      }
+
+      .footer_main__right {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .footer_main__right > div {
+        display: flex;
+      }
+
+      .footer_main__right > div:first-child {
+        display: flex;
+        padding-bottom: 15px;
+      }
+
+      
+      .footer_page {
+        display: flex;
+        padding-top:5px;
+        margin:0 auto;
+        margin-bottom: 6rem;
+        width:21cm;
+        font-size:10pt;
+        justify-content: space-between;
+
+      }
+      /** END MARGINS AND PAGE ADJUST */
+
+      .pg3_page {
+      display: flex;
+      flex-direction: column;
+      width: 21cm;
+      //- height: 29.7cm;
+      margin: 0 auto;
+      font-size: var(--textSizeForm);
+      border: 2px solid black;
+      }
+
+
+      .pg3_table-grid {
+      display:grid;
+      grid-template-columns: repeat(6,1fr);
+      align-items: center;
+      /* line-height: .3; */
+      font-size: var(--textSizeForm);
+      border: 2px solid #000;
+      }
+
+      .pg3_paragraph-1, .pg3_paragraph-2 {
+      padding: 5px 10px;
+      text-align: justify;
+      }
+
+      .pg3_paragraph-1 {
+      grid-row: 1 / 2;
+      grid-column: 1 / 7;
+      }
+
+      .pg3_paragraph-2 {
+      grid-row: 2 / 3;
+      grid-column: 1 / 7;
+      }
+
+      .pg3_paragraph__title {
+      text-align: center;
+      font-weight: bold;
+      }
+
+      .pg3_paragraph__title:not(:first-child) {
+      margin: 10px 0;
+      }
+
+      .pg3_paragraph__title:first-child {
+      margin-top: 5px;
+      margin-bottom: 10px;
+      }
+
+      .pg3_bold_text {
+      font-weight: bold;
+      }
+
+      /* TABLE COL + ROWS */
+
+      .pg3_col > p {
+      height: 49.2px;
+      display:flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      }
+
+
+      .pg3_col-lft {
+      grid-column: 1/2;
+      }
+
+      .pg3_col-lft > * {
+      border-top: 1px solid black;
+      border-right: 1px solid black;
+      }
+
+
+      .pg3_col-mid {
+      grid-column: 2 / 6;
+      }
+
+      .pg3_col-mid > * {
+      border-top: 1px solid black;
+      border-right: 1px solid black;
+      }
+
+      .pg3_col-rgt {
+      grid-column:  6 / 7;
+      }
+
+      .pg3_col-rgt > * {
+      border-top: 1px solid black;
+      }
+
+      .pg3_footer {
+      display: flex;
+      justify-content: space-between;
+      font-size: var(--textSizeForm);
+      width: 21cm;
+      margin:auto;
+      padding-top:10px;
+      }
+
+
+  body
+    div(class="pg1_page")
+      div(class="pg1_gridBoxHeader")
+        div(class="pg1_gridBoxHeader-col1")
+          p(class="pg1_gridBoxHeader-col1_headingSmall") DEPARTMENT OF HOMELAND SECURITY
+          p(class="pg1_gridBoxHeader-col1__headingNormal") Federal Emergency Management Agency
+          p(class="pg1_gridBoxHeader-col1-headingBold") ADJUSTER'S PRELIMINARY REPORT
+
+        div(class="pg1_gridBoxHeader-col2")
+          p OMB Control Number: 1660-0005
+          p Expiration: 7-31-2020
+        
+      div(class="pg1_gridFirstBox")
+        div(class="pg1_gridFirstBox-paragraph")
+          p 
+            | NOTE: The NFIP requires that a preliminary report be received within 
+            span(class="pg1_bold_text") 15 days 
+            |of assignment.
+        
+        div(class="pg1_gridFirstBox__leftColumn")
+          div(class="pg1_gridFirstBox__leftColumn-row1")
+            p NAME(S) OF INSURED:
+            span(class="pg1_inputPlaceholder" name="pg1_nameOfInsured") 
+
+          div(class="pg1_gridFirstBox__leftColumn-row2")
+            p Property Address:
+            span(class="pg1_inputPlaceholder" name="pg1_propertyAddress") DUMMY TEXT
+
+          div(class="pg1_gridFirstBox__leftColumn-row3")
+            div(class="pg1_gridFirstBox__leftColumn-row3-col")
+              p City:
+              span(class="pg1_inputPlaceholder" name="pg1_city") DUMMY TEXT
+
+            div(class="pg1_gridFirstBox__leftColumn-row3-col")
+              p State:
+              span(class="pg1_inputPlaceholder" name="pg1_state") DUMMY TEXT
+
+            div(class="pg1_gridFirstBox__leftColumn-row3-col")
+              p ZIP:
+              span(class="pg1_inputPlaceholder" name="pg1_zip") DUMMY TEXT
+
+          div(class="pg1_gridFirstBox__leftColumn-row4")
+            p Mailing/Temporary Address:
+            span(class="pg1_inputPlaceholder" name="pg1_tempAddress") DUMMY TEXT
+
+          div(class="pg1_gridFirstBox__leftColumn-row5")
+            p City:
+            span(class="pg1_inputPlaceholder" name="pg1_tempCity") DUMMY TEXT
+            p State:
+            span(class="pg1_inputPlaceholder" name="pg1_tempState") DUMMY TEXT
+            p ZIP:
+            span(class="pg1_inputPlaceholder" name="pg1_tempZip") DUMMY TEXT
+
+          div(class="pg1_gridFirstBox__leftColumn-row6")
+            p Best Contact Number:
+            span(class="pg1_inputPlaceholder" name="pg1_bestContactNr") DUMMY TEXT
+
+          div(class="pg1_gridFirstBox__leftColumn-row7")
+            p Alternate Contact Number:
+            span(class="pg1_inputPlaceholder" name="pg1_alternateContactNr") DUMMY TEXT
+
+          div(class="pg1_gridFirstBox__leftColumn-row8")
+            p Adjusting Company:
+            span(class="pg1_inputPlaceholder" name="pg1_adjustingCompany") DUMMY TEXT
+
+          div(class="pg1_gridFirstBox__leftColumn-row9")
+            p Adjuster Address:
+            span(class="pg1_inputPlaceholder" name="pg1_adjusterAddress") DUMMY TEXT
+
+          div(class="pg1_gridFirstBox__leftColumn-row10")
+            p City:
+            span(class="pg1_inputPlaceholder" name="pg1_adjusterCity") DUMMY TEXT
+
+          div(class="pg1_gridFirstBox__leftColumn-row11")
+            p State:
+            span(class="pg1_inputPlaceholder" name="pg1_adjusterState") DUMMY TEXT
+            p ZIP:
+            span(class="pg1_inputPlaceholder" name="pg1_adjusterZip") DUMMY TEXT
+
+          div(class="pg1_gridFirstBox__leftColumn-row12")
+            p Adjuster's Telephone Numbers:
+            span(class="pg1_inputPlaceholder" name="pg1_adjusterTelNr") DUMMY TEXT
+
+          div(class="pg1_gridFirstBox__leftColumn-row13")
+            p Work:
+            span(class="pg1_inputPlaceholder" name="pg1_adjusterWorkNr") DUMMY TEXT
+            p Mobile:
+            span(class="pg1_inputPlaceholder" name="pg1_adjusterMobileNr") DUMMY TEXT
+
+
+        div(class="pg1_gridFirstBox__rightColumn")
+          div(class="pg1_gridFirstBox__rightColumn-row1")
+            p POLICY NUMBER:
+            span(class="pg1_inputPlaceholder" name="pg1_policyNr") DUMMY TEXT
+
+          div(class="pg1_gridFirstBox__rightColumn-row2")
+            p Date of Loss:
+            span(class="pg1_inputPlaceholder" name="pg1_dateOfLoss") DUMMY TEXT
+
+          div(class="pg1_gridFirstBox__rightColumn-row3")
+            p FICO Number:
+            span(class="pg1_inputPlaceholder" name="pg1_ficoNr") DUMMY TEXT
+
+          div(class="pg1_gridFirstBox__rightColumn-row4")
+            p Adjuster's File Number:
+            span(class="pg1_inputPlaceholder" name="pg1_adjusterFileNr") DUMMY TEXT
+
+          div(class="pg1_gridFirstBox__rightColumn-row5")
+            p Tax ID Number:
+            span(class="pg1_inputPlaceholder" name="pg1_taxIdNumber") DUMMY TEXT
+    
+          div(class="pg1_gridFirstBox__rightColumn-row6 marginTopHelper")
+            p Date Loss Assigned:
+            span(class="pg1_inputPlaceholder" name="pg1_dateOfLoss") DUMMY TEXT
+
+          div(class="pg1_gridFirstBox__rightColumn-row7")
+            p Date Insured Contacted:
+            span(class="pg1_inputPlaceholder" name="pg1_dateInsuredContracted") DUMMY TEXT
+
+          div(class="pg1_gridFirstBox__rightColumn-row8")
+            p Date Loss Inspected:
+            span(class="pg1_inputPlaceholder" name="pg1_dateLossInspected") DUMMY TEXT
+
+      div(class="pg1_gridSecondBox")
+        div(class="pg1_gridSecondBox__leftColumn pg1_text_rotate pg1_bold_text") ATTS.
+      
+        div(class="pg1_gridSecondBox__rightColumn")
+          div(class="pg1_gridSecondBox__rightColumn-row1")
+            p Attachments (enter number of each inside parentheses)
+
+          div(class="pg1_gridSecondBox__rightColumn-row2")
+            div
+              span(class="pg1_inputCheckbox" name="pg1_buildingCheck")
+              p Building worksheets
+              span(class="pg1_inputPlaceholder" name="pg1_buildingInput") DUMMY TEXT
+
+            div
+              span(class="pg1_inputCheckbox" name="pg1_photoCheck")
+              p Photographs
+              span(class="pg1_inputPlaceholder" name="pg1_photoInput") DUMMY TEXT
+
+
+            div
+              span(class="pg1_inputCheckbox" name="pg1_proofOfLoss")
+              p Proof of loss
+
+            div
+              span(class="pg1_inputCheckbox" name="pg1_buildingOtherCheck")
+              p Other
+
+            div  
+              p (specify)
+              span(class="pg1_inputPlaceholder" name="pg1_buildingOtherInput") DUMMY TEXT
+
+          div(class="pg1_gridSecondBox__rightColumn-row3")
+            div
+              span(class="pg1_inputCheckbox" name="pg1_contentsCheck")
+              p Contents worksheets
+              span(class="pg1_inputPlaceholder" name="pg1_contentsInput") DUMMY TEXT
+
+
+            div
+              span(class="pg1_inputCheckbox" name="pg1_narrativeCheck")
+              p Narrative
+              span(class="pg1_inputPlaceholder" name="pg1_narrativeInput") DUMMY TEXT
+
+            div
+              span(class="pg1_inputCheckbox" name="pg1_rcProof")
+              p R/C Proof
+            
+            div
+              span(class="pg1_inputCheckbox" name="pg1_contentsOtherCheck")
+              p Other
+            
+            div
+              p (specify)
+              span(class="pg1_inputPlaceholder" name="pg1_contentsOtherInput") DUMMY TEXT
+
+      div(class="pg1_gridThirdBox")
+        div(class="pg1_gridThirdBox__leftColumn pg1_text_rotate pg1_bold_text") INSURANCE
+
+        div(class="pg1_gridThirdBox__middleColumn")
+          div(class="pg1_gridThirdBox__middleColumn-left")
+            p Coverage Verified From:
+            div
+              span(class="pg1_inputCheckbox" name="pg1_nfip")
+              p NFIP
+            div
+              span(class="pg1_inputCheckbox" name="pg1_agentDaily")
+              p Agent's Daily
+            div
+              span(class="pg1_inputCheckbox" name="pg1_insuredPolicy")
+              p Insured's Policy
+          
+          div(class="pg1_gridThirdBox__middleColumn-right")
+            p Policy Term
+            div
+              p From:
+              span(class="pg1_inputPlaceholder" name="pg1_policyTermFrom") DUMMY TEXT
+            
+            div
+              p To:
+              span(class="pg1_inputPlaceholder" name="pg1_policyTermTo") DUMMY TEXT
+        
+        div(class="pg1_gridThirdBox__rightColumn")
+          div(class="pg1_gridThirdBox__rightColumn-left")
+            p Program:
+            div
+              span(class="pg1_inputCheckbox" name="pg1_programEmergency")
+              p Emergency
+            div
+              span(class="pg1_inputCheckbox" name="pg1_programRegular")
+              p Regular
+
+          div(class="pg1_gridThirdBox__rightColumn-right")
+            p SFIP Form:
+            div
+              span(class="pg1_inputCheckbox" name="pg1_generalProperty")
+              p General Property
+            div
+              span(class="pg1_inputCheckbox" name="pg1_dwelling")
+              p Dwelling
+            div
+              span(class="pg1_inputCheckbox" name="pg1_rcbap")
+              p RCBAP
+
+
+        div(class="pg1_gridThirdBox__row2-leftColumn")
+          div(class="pg1_inline-flex")
+            p Advance payment requested?
+            span
+              span(class="pg1_inputCheckbox" name="pg1_advancePaymentYes")
+              span Yes
+
+            span
+              span(class="pg1_inputCheckbox" name="pg1_advancePaymentNo")
+              span No
+
+          em If yes, submit Proof of Loss for (FF 086-0-9) for amount of payment and supporting documentation with this report.
+
+        div(class="pg1_gridThirdBox__row2-rightColumn")
+
+          div
+            p Building
+            p Contents
+
+          div
+            p COVERAGE
+            span
+              |$
+              span(class="pg1_inputPlaceholder" name="pg1_coverageBuilding") DUMMY TEXT
+            span
+              |$
+              span(class="pg1_inputPlaceholder" name="pg1_coverageContents") DUMMY TEXT 
+
+          div
+            p DEDUCTIBLE
+            span
+              |$
+              span(class="pg1_inputPlaceholder" name="pg1_deductibleBuilding") DUMMY TEXT
+            span
+              |$
+              span(class="pg1_inputPlaceholder" name="pg1_deductibleContents") DUMMY TEXT
+
+          div
+            p RESERVE
+            span
+              |$
+              span(class="pg1_inputPlaceholder" name="pg1_reserveBuilding") DUMMY TEXT
+            span
+              |$
+              span(class="pg1_inputPlaceholder" name="pg1_reserveContents") DUMMY TEXT
+      
+      div(class="pg1_gridFourthBox")
+        div(class="pg1_gridFourthBox__leftColumn pg1_text_rotate pg1_bold_text") RISK
+
+        div(class="pg1_gridFourthBox__rightColumn")
+          div(class="pg1_gridFourthBox__rightColumn-Grid")
+            div(class="pg1_gridFourthBox__rightColumn-Grid--left")
+              p TYPE OF BUILDING:
+
+            div(class="pg1_gridFourthBox__rightColumn-Grid--right")
+
+              div(class="pg1_gridFourthBox__rightColumn-Grid--right__FLEX")
+                div
+                  span(class="pg1_inputCheckbox" name="pg1_singleFamily")
+                  p Single Family
+                div
+                  span(class="pg1_inputCheckbox" name="pg1_families")
+                  p 2-4 Family
+                div
+                  span(class="pg1_inputCheckbox" name="pg1_condoAssociation")
+                  p Condo Association
+                div
+                  span(class="pg1_inputCheckbox" name="pg1_condoUnit")
+                  p Condo Unit
+                div
+                  span(class="pg1_inputCheckbox" name="pg1_otherResidential")
+                  p Other Residential
+
+              div
+                span(class="pg1_inputCheckbox" name="pg1_nonResidential")
+                p Non-Residential (including Business Buildings and Other Non-Residential Buildings)
+
+              div(class="pg1_gridFourthBox__rightColumn-Grid--right__FLEX")
+                div
+                  span(class="pg1_inputCheckbox" name="pg1_mobileHomeTraveler")
+                  p Mobile Home/Traveler Trailer:
+
+                div
+                  p Make:
+                  span(class="pg1_inputPlaceholder" name="pg1_make") DUMMY TEXT
+
+              div(class="pg1_gridFourthBox__rightColumn-Grid--right__FLEX")
+                div
+                  p Model:
+                  span(class="pg1_inputPlaceholder" name="pg1_model") DUMMY TEXT
+
+                div
+                  p Serial Number:
+                  span(class="pg1_inputPlaceholder" name="pg1_serialNumber") DUMMY TEXT
+
+          div(class="pg1_gridFourthBox2__rightColumn-Grid")
+            div
+              p OCCUPANCY:
+
+              span
+                span(class="pg1_inputCheckbox" name="pg1_owner")
+                p Owner
+
+              span
+                span(class="pg1_inputCheckbox" name="pg1_tenant")
+                p Tenant
+
+              span
+                span(class="pg1_inputCheckbox" name="pg1_govOwned")
+                p State Government owned
+
+              span
+                span(class="pg1_inputCheckbox" name="pg1_unoccupied")
+                p Unoccupied
+
+              p RESIDENCY:
+              
+              span
+                span(class="pg1_inputCheckbox" name="pg1_principal")
+                p Principal
+
+              span
+                span(class="pg1_inputCheckbox" name="pg1_seasonal")
+                p Seasonal
+            
+            div
+              p TITLE VERIFIED?
+
+              span
+                span(class="pg1_inputCheckbox" name="pg1_titleVerifiedYes")
+                p Yes
+              
+              span
+                span(class="pg1_inputCheckbox" name="pg1_titleVerifiedNo")
+                p No
+              
+              span
+                p Source of verification:
+                span(class="pg1_inputPlaceholder" name="pg1_sourceOfVerification") DUMMY TEXT
+
+          div(class="pg1_gridFourthBox3__rightColumn-Grid")
+            div
+              p Number of floors in the building including basement/crawl space:
+
+              span
+                span(class="pg1_inputCheckbox" name="pg1_numberFloorsOne")
+                p 1
+
+              span
+                span(class="pg1_inputCheckbox" name="pg1_numberFloorsTwo")
+                p 2
+
+              span
+                span(class="pg1_inputCheckbox" name="pg1_numberFloorsMore")
+                p 3 (or more)
+            
+            div
+              p Is building a split level?
+
+              span
+                span(class="pg1_inputCheckbox" name="pg1_splitLevelYes")
+                p Yes
+              
+              span
+                span(class="pg1_inputCheckbox" name="pg1_splitLevelNo")
+                p No
+
+            div
+              p In case of multiple occupancy, indicate floor(s) occupied by insured:
+             
+              span
+                span(class="pg1_inputCheckbox" name="pg1_basement")
+                p Basement
+
+              span
+                span(class="pg1_inputCheckbox" name="pg1_first")
+                p First
+
+              span
+                span(class="pg1_inputCheckbox" name="pg1_second")
+                p Second and/or above
+
+          div(class="pg1_gridFourthBox4__rightColumn-Grid")
+            div
+              p Type of basement:
+
+              span
+                span(class="pg1_inputCheckbox" name="pg1_typeBaseNone")
+                p None
+
+              span
+                span(class="pg1_inputCheckbox" name="pg1_typeBaseUnfinished")
+                p Unfinished
+
+              span
+                span(class="pg1_inputCheckbox" name="pg1_typeBaseFinished")
+                p Finished
+
+              p Is basement flood-proofed?
+
+              span
+                span(class="pg1_inputCheckbox" name="pg1_floodProofedYes")
+                p Yes
+              
+              span
+                span(class="pg1_inputCheckbox" name="pg1_floodProofedYes")
+                p No
+
+          div(class="pg1_gridFourthBox4__rightColumn-Grid")
+            div
+              p Building elevated?
+              
+              span
+                span(class="pg1_inputCheckbox" name="pg1_elevatedYes")
+                p Yes
+
+              span
+                span(class="pg1_inputCheckbox" name="pg1_elevatedNo")
+                p No
+
+              span
+                p Foundation area enclosure?
+              
+              span
+                span(class="pg1_inputCheckbox" name="pg1_areaEnclosureNone")
+                p None
+              
+              span
+                span(class="pg1_inputCheckbox" name="pg1_breakawayWalls")
+                p Breakaway walls
+              
+              span
+                span(class="pg1_inputCheckbox" name="pg1_areaEnclosureUnfinished")
+                p Unfinished
+              
+              span
+                span(class="pg1_inputCheckbox" name="pg1_areaEnclosureFinished")
+                p Finished
+
+          div(class="pg1_gridFourthBoxLAST__rightColumn-Grid")
+            div(class="pg1_gridFourthBoxLAST-col-left")
+              div
+                p Is Risk under construction?
+
+                span
+                  span(class="pg1_inputCheckbox" name="pg1_riskUnderYes")
+                  p Yes
+
+                span
+                  span(class="pg1_inputCheckbox" name="pg1_riskUnderNo")
+                  p No
+
+              div
+                div 
+                  p Date of Construction:
+                  span(class="pg1_inputPlaceholder" name="pg1_dateOfConstruction") DUMMY TEXT
+              
+              div
+                div
+                  p FIRM Date:
+                  span(class="pg1_inputPlaceholder" name="pg1_firmDate") DUMMY TEXT
+
+                  span
+                    span(class="pg1_inputCheckbox" name="pg1_preFirm")
+                    p Pre-Firm
+
+                  span
+                    span(class="pg1_inputCheckbox" name="pg1_postFirm")
+                    p Post-Firm
+            
+            div(class="pg1_gridFourthBoxLAST-col-right")
+              div
+                p PRIOR CONDITION OF:
+
+              div
+                p Building:
+
+                div
+                  span(class="pg1_inputCheckbox" name="pg1_buildingPoor")
+                  p  Poor
+
+                div
+                  span(class="pg1_inputCheckbox" name="pg1_buildingFair")
+                  p  Fair
+
+                div
+                  span(class="pg1_inputCheckbox" name="pg1_buildingGood")
+                  p  Good
+
+                div
+                  span(class="pg1_inputCheckbox" name="pg1_buildingVeryGood")
+                  p  Very Good
+
+              div
+                p Contents
+
+                div
+                  span(class="pg1_inputCheckbox" name="pg1_contentsPoor")
+                  p  Poor
+
+                div
+                  span(class="pg1_inputCheckbox" name="pg1_contentsFair")
+                  p  Fair
+
+                div
+                  span(class="pg1_inputCheckbox" name="pg1_contentsGood")
+                  p  Good
+
+                div
+                  span(class="pg1_inputCheckbox" name="pg1_contentsVeryGood")
+                  p  Very Good
+
+
+      div(class="pg1_footer")
+        em See Page 3 for Privacy Act Statement and Paperwork Burden Disclosure Notice
+
+      div(class="pg1_footer-page")
+        p FEMA FORM 086-0-13 (04/17)
+        p Page 1 of 3
+
+
+    div(class="pg2_page")
+      div(class="pg2_boxZero")
+        div(class="pg2_boxZero__columnLeft")
+          div(class="pg2_boxZero__columnLeft-row1")
+            div
+              p Property Address:
+              span(class="pg2_dummy" name="pg2_head_address") DUMMY TEXT
+
+          div(class="pg2_boxZero__columnLeft-row2")
+            div
+              p City:
+              span(class="pg2_dummy" name="pg2_head_city") DUMMY TEXT
+          
+            div
+              p State:
+              span(class="pg2_dummy" name="pg2_head_state") DUMMY TEXT
+            
+            div
+              p ZIP:
+              span(class="pg2_dummy" name="pg2_head_zip") DUMMY TEXT
+        
+        div(class="pg2_boxZero__columnRight")
+          div
+            p Policy Number:
+            span(class="pg2_dummy" name="pg2_policyNumber") DUMMY TEXT
+
+          div
+            p Date of Loss:
+            span(class="pg2_dummy" name="pg2_dateOfLoss") DUMMY TEXT
+
+      div(class="pg2_boxRisk")
+        div(class="pg2_boxRisk__left")
+          div(class="pg2_text_rotate") RISK CONTINUED
+
+        div(class="pg2_boxRisk__right")
+          div(class="pg2_boxRisk__right--row1")
+            div
+              p FOUNDATION STRUCTURE:
+
+            div 
+              p PILES:
+
+              div
+                span(class="pg2_checkboxDummy" name="pg2_pilesWoodPost")
+                p Wood post
+
+              div
+                span(class="pg2_checkboxDummy" name="pg2_pilesConcreate") 
+                p Concrete slab
+
+              div
+                span(class="pg2_checkboxDummy" name="pg2_pilesSteel")
+                p Steel
+
+              div
+                p Other
+                span(class="pg2_dummy" name="pg2_pilesOther") DUMMY TEXT
+
+            div
+              p PIERS:
+
+              div
+                span(class="pg2_checkboxDummy" name="pg2_piersConcreate")
+                p Reinforced concrete
+
+              div
+                span(class="pg2_checkboxDummy" name="pg2_piersReBlock")
+                p Reinforced block
+
+              div
+                span(class="pg2_checkboxDummy" name="pg2_piersUnBlock")
+                p Unreinforced block
+              
+              div
+                span(class="pg2_checkboxDummy" name="pg2_piersBrick")
+                p Brick
+
+              div
+                span(class="pg2_checkboxDummy" name="pg2_piersCheckOther")
+                p Other
+                span(class="pg2_dummy" name="pg2_piersInputOther") DUMMY TEXT
+
+            div
+              p WALLS:
+
+              div
+                span(class="pg2_checkboxDummy" name="pg2_wallsConcrete")
+                p Reinforced concrete
+              
+              div
+                span(class="pg2_checkboxDummy" name="pg2_wallsBlock")
+                p Block
+
+              div
+                span(class="pg2_checkboxDummy" name="pg2_wallsUnBlock")
+                p Unreinforced block
+
+              div
+                span(class="pg2_checkboxDummy" name="pg2_wallsConcreateShear")
+                p Reinforced concrete shear
+
+              div
+                span(class="pg2_checkboxDummy" name="pg2_wallsPlywood")
+                p Treated plywood
+
+            div
+              div
+                span(class="pg2_checkboxDummy" name="pg2_wallsBrick")
+                p Brick
+              
+              div
+                span(class="pg2_checkboxDummy" name="pg2_wallsCheckboxOther")
+                p Other
+                span(class="pg2_dummy" name="pg2_wallsInputOther") DUMMY TEXT
+
+          div(class="pg2_boxRisk__right--row2")
+            div(class="pg2_boxRisk__right--row2-col1")
+              div EXTERIOR WALL STRUCTURE:
+
+              div
+                div
+                  span(class="pg2_checkboxDummy" name="pg2_wallStructReConcrete") 
+                  p Reinforced concrete
+
+                div
+                  span(class="pg2_checkboxDummy" name="pg2_wallStructConcreteBlock")
+                  p Concrete block
+
+                div
+                  span(class="pg2_checkboxDummy" name="pg2_wallStructWood")
+                  p Wood stud
+
+              div
+                div
+                  span(class="pg2_checkboxDummy" name="pg2_wallStructSteelGrass")
+                  p Steel and glass
+
+                div
+                  span(class="pg2_checkboxDummy" name="pg2_wallStructBrickStone")
+                  p Brick and stone
+
+              div
+                span(class="pg2_checkboxDummy" name="pg2_wallStructCheckOther")
+                p Other
+                span(class="pg2_dummy" name="pg2_wallStructInputOther") DUMMY TEXT
+
+            div(class="pg2_boxRisk__right--row2-col2")
+              div EXTERIOR WALL SURFACE TREATMENT:
+
+              div
+                div
+                  span(class="pg2_checkboxDummy" name="pg2_wallSurfUnfinished")  
+                  p Unfinished
+
+                div
+                  span(class="pg2_checkboxDummy" name="pg2_wallSurfStoneBrick")
+                  p Stone or brick veneer
+
+                div
+                  span(class="pg2_checkboxDummy" name="pg2_wallSurfStucco")
+                  p Stucco
+
+              div
+                div  
+                  span(class="pg2_checkboxDummy" name="pg2_wallSurfWood")
+                  p Wood siding
+
+                div
+                  span(class="pg2_checkboxDummy" name="pg2_wallSurfMetal")
+                  p Metal sheathing/siding        
+
+              div
+                div
+                  span(class="pg2_checkboxDummy" name="pg2_wallSurfVinyl")
+                  p Vinyl sheathing/siding
+
+                div
+                  span(class="pg2_checkboxDummy" name="pg2_wallSurfCheckOther")
+                  p Other
+                  span(class="pg2_dummy" name="pg2_wallSurfInputOther") DUMMY TEXT
+
+          div(class="pg2_boxRisk__right--row3")
+            div(class="pg2_boxRisk__right--row3-col1")
+              div CONTENTS ARE:
+
+              div
+                span(class="pg2_checkboxDummy" name="pg2_houseHold")
+                p Household
+              
+              div
+                span(class="pg2_checkboxDummy" name="pg2_otherThanHouseHold")
+                p Other than household
+
+            div(class="pg2_boxRisk__right--row3-col2")
+              div CONTENTS LOCATED IN:
+
+              div
+                div
+                  span(class="pg2_checkboxDummy" name="pg2_basement")
+                  p Basement
+
+                div
+                  span(class="pg2_checkboxDummy" name="pg2_firstFloor")
+                  p First floor
+
+                div
+                  span(class="pg2_checkboxDummy" name="pg2_basementFirstFloor")
+                  p Basement and first floor
+
+              div
+                div
+                  span(class="pg2_checkboxDummy" name="pg2_firstFloorAbove")
+                  p First floor and above
+
+                div
+                  span(class="pg2_checkboxDummy" name="pg2_secondFloor")
+                  p Second floor and above
+
+          div(class="pg2_boxRisk__right--row4")
+            div
+              p Nearest body of water to the insured building:
+              span(class="pg2_dummy" name="pg2_nearestBody") DUMMY TEXT
+
+            div
+              p Distance to the insured building:
+              span(class="pg2_dummy" name="pg2_distanceInsuredBuilding") DUMMY TEXT
+
+      div(class="pg2_boxOrigin")
+        div(class="pg2_boxOrigin__left")
+          div(class="pg2_text_rotate") ORIGIN
+
+        div(class="pg2_boxOrigin__right")
+          div(class="pg2_boxOrigin__right-row1")
+            div
+              div 
+                p Was there a general and temporary condition of flooding?
+
+            div
+              div
+                span(class="pg2_checkboxDummy" name="pg2_conditionFloodingNo")
+                p No (Explain fully under Remarks)
+
+              div
+                span(class="pg2_checkboxDummy" name="pg2_conditionFloodingYes") 
+                p Yes (Indicate cause of loss below)
+
+            div
+              div
+                p Cause of loss:
+              
+              div
+                span(class="pg2_checkboxDummy" name="pg2_tidewaterOverflow")
+                p Tidewater overflow
+
+              div
+                span(class="pg2_checkboxDummy" name="pg2_steamRiverLake")
+                p Stream, river, or lake overflow
+
+              div
+                span(class="pg2_checkboxDummy" name="pg2_alluvial")
+                p Alluvial fan overflow
+
+              div
+                span(class="pg2_checkboxDummy" name="pg2_accumulation")
+                p Accumulation of rainfall or snowmelt
+
+            div
+              div
+                p Flood characteristics:
+
+              div
+                span(class="pg2_checkboxDummy" name="pg2_velocityFlow")
+                p Velocity flow
+
+              div
+                span(class="pg2_checkboxDummy" name="pg2_lowVelocity")
+                p Low velocity flow or ponding
+
+              div
+                span(class="pg2_checkboxDummy" name="pg2_waveAction")
+                p Wave action
+
+              div
+                p Was there Erosion?
+
+              div
+                span(class="pg2_checkboxDummy" name="pg2_erosionYes")
+                p Yes
+              
+              div
+                span(class="pg2_checkboxDummy" name="pg2_erosionNo")
+                p No
+
+          div(class="pg2_boxOrigin__right-row2")
+            div
+              div
+                p Did other than natural cause contribute to flooding?
+
+                div
+                  span(class="pg2_checkboxDummy" name="pg2_naturalCauseYes")
+                  p Yes
+
+                div
+                  span(class="pg2_checkboxDummy" name="pg2_naturalCauseNo")
+                  p No
+            em If yes, complete Cause for Loss and Subrogation Report form (FF 086-0-16).
+
+          div(class="pg2_boxOrigin__right-row3")
+            div(class="pg2_boxOrigin__right-row3-left")
+              div(class="pg2_boxOrigin__right-row3-left--row1")
+                div
+                  p DATE/TIME WATER ENTERED BUILDING:
+                  div
+                    div
+                      p Date:
+                      span(class="pg2_dummy" name="pg2_enteredDate") DUMMY TEXT
+                    div
+                      p Time:
+                      span(class="pg2_dummy" name="pg2_enteredTime") DUMMY TEXT
+                    div
+                      span(class="pg2_checkboxDummy" name="pg2_enteredAM")
+                      p AM
+                    div
+                      span(class="pg2_checkboxDummy" name="pg2_enteredPM")
+                      p PM
+
+                  p DATE/TIME WATER RECEDED FROM BUILDING:
+                  div
+                    div
+                      p Date:
+                      span(class="pg2_dummy" name="pg2_recededDate") DUMMY TEXT
+                    div
+                      p Time:
+                      span(class="pg2_dummy" name="pg2_recededTime") DUMMY TEXT
+                    div
+                      span(class="pg2_checkboxDummy" name="pg2_recededAM")
+                      p AM
+                    div
+                      span(class="pg2_checkboxDummy" name="pg2_recededPM")
+                      p PM                    
+                  
+              div(class="pg2_boxOrigin__right-row3-left--row2")
+                div
+                  div
+                    p LENGTH OF TIME WATER REMAINED IN BUILDING:
+                  div
+                    span(class="pg2_dummy" name="pg2_remainedDays") DUMMY TEXT
+                    p Days/
+                    span(class="pg2_dummy" name="pg2_remainedHours") DUMMY TEXT
+                    p Hours/
+                    span(class="pg2_dummy" name="pg2_remainedMin") DUMMY TEXT
+                    p Minutes
+
+            div(class="pg2_boxOrigin__right-row3-right")
+              div(class="pg2_boxOrigin__right-row3-right--row1")
+                div
+                  p WATER/WAVE HEIGHT IN INCHES:
+                div
+                  p Main Building - Dwelling or Commercial Building:
+
+                div
+                  div
+                    p Exterior:
+                    span(class="pg2_dummy" name="pg2_buildingExterior") DUMMY TEXT
+
+                  div
+                    p Interior:
+                    span(class="pg2_dummy" name="pg2_buildingInterior") DUMMY TEXT
+
+
+              div(class="pg2_boxOrigin__right-row3-right--row2")
+                div
+                  p Detached Garage:
+                
+                div
+                  div
+                    p Exterior:
+                    span(class="pg2_dummy" name="pg2_garageExterior") DUMMY TEXT
+
+                  div
+                    p Interior:
+                    span(class="pg2_dummy" name="pg2_garageInterior") DUMMY TEXT
+
+      div(class="footer_main")
+        div(class="footer_main__left")
+          p Date:
+          span(class="pg1_inputPlaceholder" name="footerThreeDate") DUMMY TEXT
+
+        div(class="footer_main__right")
+          div
+            p Adjuster's Signature:
+            span(class="pg1_inputPlaceholder" name="adjusterSignature") DUMMY TEXT
+
+          div
+            p Flood Control Number:
+            span(class="pg1_inputPlaceholder" name="floodControlNumber") DUMMY TEXT
+
+    div(class="footer_page")
+      p FEMA FORM 086-0-13 (04/17)
+      p Page 2 of 3
+
+    div(class="pg3_page pg3_table-grid")
+      div(class="pg3_paragraph-1")
+        p(class="pg3_paragraph__title") PRIVACY ACT STATEMENT
+        p 
+          | The information requested is necessary to process the subject loss. The authority to collect the information is 42 U.S.C. §§ 4001 to 4130. It is
+          | voluntary on your part to furnish the information. However, omission of an item may preclude processing of the form. The Federal Emergency
+          | Management Agency will not disclose this information, except to: the servicing agent acting as the Federal Government's fiscal agent; to
+          | claims adjusters to enable them to confirm coverage and the location of insured property; to certain Federal, State, and Local Government
+          | agencies for determining eligibility for benefits and for verification of agencies for acquisition and relocation-related projects, consistent with
+          | the National Flood Insurance Program and consistent with the routine uses described in the program's system of record. Failure by you to
+          | provide some or all of the information may result in delay in processing or denial of this claim or application.
+
+      div(class="pg3_paragraph-2")
+        p(class="pg3_paragraph__title") PAPERWORK BURDEN DISCLOSURE NOTICE
+        p
+          | Public reporting burden for the collection of information titled Claims for National Flood Insurance Program (NFIP) is estimated to average 6
+          | hours per response. The burden estimate includes the time for reviewing instructions, searching existing data sources, gathering and
+          | maintaining the data needed, and completing and submitting these forms. You are not required to respond to this collection of information
+          | unless a currently valid OMB control number and expiration date is displayed in the upper right corner of the these forms. Send comments
+          | regarding the accuracy of the burden estimate and suggestions for reducing the burden to: Information Collections Management, Department
+          | of Homeland Security, Federal Emergency Management Agency, 500 C Street, S.W., Washington, DC 20472, Paperwork Reduction Project
+          | (1660-0005). 
+          p
+            span(class="pg3_bold_text") NOTE: Do not send your completed form to this address.
+
+      div(class="pg3_col pg3_col-lft")
+        p FEMA FORM NO.
+        p 086-0-06
+        p 086-0-07
+        p 086-0-08
+        p 086-0-09
+        p 086-0-10
+        p 086-0-11
+        p 086-0-12
+        p(class="pg3_bold_text") 086-0-13
+        p 086-0-14
+        p 086-0-15
+        p 086-0-16
+        p 086-0-17
+        p 086-0-18
+        p 086-0-19
+        p 086-0-20
+        p 086-0-21
+      
+      div(class="pg3_col pg3_col-mid")
+        p TITLE
+        p Worksheet-Contents-Personal Property
+        p Worksheet-Building
+        p Worksheet-Building (Continued)
+        p Proof of Loss
+        p Increased Cost of Compliance
+        p Notice of Loss
+        p
+          span Statement as to Full Cost to Repair or Replacement Cost Coverage,
+          span Subject to the Terms and Conditions of this Polic
+        p(class="pg3_bold_text") Adjuster's Preliminary Report
+        p Adjuster's Final Report
+        p National Flood Insurance Program Narrative Report
+        p Cause of Loss and Subrogation Report
+        p Manufactured (Mobile) Home/Travel Trailer Worksheet
+        p Mobile Home/Travel Trailer Worksheet (Continued)
+        p Increased Cost of Compliance (ICC) Adjuster Report
+        p Adjuster's Preliminary Flood Damage Assessment
+        p Adjuster's Certification Application
+
+      div(class="pg3_col pg3_col-rgt")
+        p BURDEN HOURS
+        p 2.50 Hours
+        p 2.50 Hours
+        p 1.00 Hours
+        p .08 Hours
+        p 2.00 Hours
+        p .07 Hours
+        p .10 Hours
+        p(class="pg3_bold_text") .07 Hours
+        p .07 Hours
+        p .08 Hours
+        p 1.00 Hours
+        p .50 Hours
+        p .25 Hours
+        p .42 Hours
+        p .25 Hours
+        p .25 Hours
+        
+    div(class="pg3_footer")
+      p FEMA FORM 086-0-13 (04/17)
+      p Page 3 of 3
