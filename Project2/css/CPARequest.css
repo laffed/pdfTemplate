@@ -112,9 +112,10 @@ body {
 
 .pageMain {
   grid-column: 2/3;
-  grid-row:1/2;
+  grid-row: 1/2;
   display: grid;
   grid-template-rows: 51.55px max-content 1fr 15%;
+  margin-right: 10px;
 }
 
 .pageMain__header {
@@ -135,6 +136,7 @@ body {
   flex-direction: column;
   justify-content: center;
   padding-top:40px;
+  font-size:14px;
 
 }
 
@@ -146,6 +148,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  font-size: 15px;
 }
 
 .pageMain__text > p {

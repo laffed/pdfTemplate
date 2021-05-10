@@ -114,6 +114,7 @@ body {
   grid-row:1/2;
   display:grid;
   grid-template-rows: 1fr 2fr 1fr;
+  margin-right: 10px;
 
 }
 
