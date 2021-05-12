@@ -179,6 +179,14 @@ ol li::marker {
   background-position: center;
 }
 
+.pageFooter {
+  grid-column: 1 / 3;
+  grid-row: 2 / 3;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
 /* MARGINS STYLES */
 .pageMain, .pageSidebar {margin-top:50px;}
 
