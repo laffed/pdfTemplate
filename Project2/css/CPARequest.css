@@ -151,12 +151,21 @@ body {
   font-size: 15px;
 }
 
-.pageMain__text > p {
+.pageMain__text > li {
   padding-bottom: 10px;
 }
 
 .pageMain__footer-title{
   padding-bottom: 5px;
+}
+
+ol li {
+  list-style: decimal;
+  list-style-position: inside;
+}
+
+ol li::marker {
+  font-weight: bold;
 }
 
 .pageFooter {
