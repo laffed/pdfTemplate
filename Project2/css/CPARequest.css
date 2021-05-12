@@ -162,6 +162,18 @@ body {
 .pageFooter {
   grid-column: 1 / 3;
   grid-row: 2 / 3;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.footer__logo {
+  grid-column: 2/3;
+  display: flex;
+  background-image: url(../../assets/imgs/logo.png);
+  background-repeat: no-repeat;
+  background-size: 80%, contain;
+  background-position: center;
 }
 
 /* MARGINS STYLES */
