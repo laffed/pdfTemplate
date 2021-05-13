@@ -1,0 +1,244 @@
+ /* width: '21cm',
+height: '29.7cm',
+margin: {top: '0.5in', right: '0.5in', bottom: '0', left: '0.5in'} */ 
+:root {
+  --fsS: 10px;
+  --fsM: 14px;
+  --fsL: 18px;
+  --fsCost: 22px;
+  --fsXL: 25px;
+  --colorAsidePrimary: #1a0dab;
+  --colorAsideSecond: #609;
+  --colorText: #4d5156;
+
+}
+
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding:0;
+}
+
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.pageBody {
+  display: grid;
+  grid-template-columns: 30% 1fr;
+  grid-template-rows: 1fr 10%;
+
+  width: 21cm;
+  height: 29.7cm;
+  margin: 0 auto;
+  margin-top: 0.5cm;
+  margin-bottom: 1cm;
+  border: 2px solid black;
+}
+
+.pageSidebar {
+  grid-column: 1/2;
+  grid-row:1/2;
+
+  display:grid;
+  grid-template-rows: repeat(3,1fr);
+  text-align: left;
+  font-size:12px;
+  padding-right:20px;
+  padding-left:10px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.pageSidebar__top {
+  grid-row: 1/2;
+
+  display: grid;
+  grid-template-rows:auto;
+}
+
+.pageSidebar__top--title {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.pageSidebar__middle {
+  grid-row:2/3;
+
+  display: grid;
+  grid-template-rows: auto;
+  
+}
+
+.pageSidebar__bottom {
+  grid-row: 3/4;
+
+  display: grid;
+  grid-template-rows:auto;
+  text-align: center;
+  font-size: 12px;
+}
+
+
+
+.pageSidebar__bottom-title {
+  display:flex;
+  flex-direction: column;
+  background-color: var(--colorAsidePrimary);
+  color: white;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 14px;
+  margin-bottom: 30px;
+}
+
+.pageSidebar__bottom-title-main {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.sidebarTitle {
+  font-size:12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: underline;
+  padding-bottom: 5px;
+}
+
+.pageMain {
+  grid-column: 2/3;
+  grid-row:1/2;
+  display:grid;
+  grid-template-rows: 1fr 2fr 1fr;
+  margin-right: 10px;
+
+}
+
+.pageMain__header {
+  display: grid;
+  grid-template-rows: 1fr 1fr 2fr;
+}
+
+.pageMain__header--tile {
+  font-size: var(--fsXL);
+  font-weight: bold;
+  text-align: center;
+}
+
+.pageMain__header--details  {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding-right: 10px;
+}
+
+.pageMain__header--details-title {
+  font-size: var(--fsM);
+  font-weight: bold;
+  text-transform: uppercase;
+  padding-bottom: 3px;
+}
+
+.pageMain__header--details-address {
+  font-size: var(--fsM);
+}
+
+.pageMain__header--costs {
+  grid-row: 3/4;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  place-content: space-around;
+  text-align: center;
+}
+
+.pageMain--costBox-title {
+  font-size: var(--fsM);
+  font-weight: bold;
+  padding-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.pageMain--costBox {
+  display: block;
+  border: 1px dashed black;
+  width:250px;
+  padding: 10px 10px;
+  text-align: center;
+  font-size: var(--fsCost);
+
+}
+
+.pageMain__text {
+  display: flex;
+  flex-direction: column;
+  text-align: justify;
+  margin: 0 15px 0 5px;
+  line-height: 1.4;
+
+  font-size:14px;
+  font-family: Arial, Helvetica, sans-serif;
+  justify-content: center;
+}
+
+.pageMain__text > p:first-child {
+  padding-bottom: 40px;
+}
+
+
+.pageMain__header--tile::first-letter {
+  font-size: 30px;
+}
+
+.pageMain__footer {
+  display:grid;
+  grid-template-columns: repeat(2, 1fr);
+  font-size: 13px;
+  align-items: center;
+}
+
+.pageMain__footer--col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pageMain__footer--col-txt {
+  display: flex;
+  justify-content: space-between;
+  width: 250px;
+}
+
+.signatureBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  height: 165px;
+  border: 1px dashed black;
+}
+
+
+.pageFooter {
+  grid-column: 1 / 3;
+  grid-row: 2 / 3;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.footer__logo {
+  grid-column: 2/3;
+  display: flex;
+  background-image: url(../../assets/imgs/logo.png);
+  background-repeat: no-repeat;
+  background-size: 80%, contain;
+  background-position: center;
+}
+
+/* MARGINS STYLES */
+.pageMain, .pageSidebar {margin-top:50px;}
