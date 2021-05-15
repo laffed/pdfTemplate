@@ -43,10 +43,11 @@ body {
 }
 
 .pageSidebar__top {
-  grid-row: 2/6;
+  grid-row: 1/5;
   display: grid;
   gap:10px;
   grid-template-rows:auto;
+  padding-top:93px;
 }
 
 .pageSidebar__top > div {
@@ -112,8 +113,10 @@ span[name="addCoName"] {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  font-size: 15px;
+  font-size: 13px;
 }
+
+.pageMain__engineer {font-size:13px}
 
 
 .pageMain__adjuster {padding: 25px 0;}
