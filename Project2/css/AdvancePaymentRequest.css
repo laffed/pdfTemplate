@@ -4,10 +4,6 @@
   --fsL: 18px;
   --fsCost: 22px;
   --fsXL: 25px;
-  --colorAsidePrimary: #1a0dab;
-  --colorAsideSecond: #609;
-  --colorText: #4d5156;
-
 }
 
 
@@ -32,7 +28,6 @@ body {
   margin: 0 auto;
   margin-top: 0.5cm;
   margin-bottom: 1cm;
-  border: 2px solid black;
 }
 
 .pageSidebar {
@@ -62,9 +57,14 @@ body {
 .pageSidebar__top--title {
   display: flex;
   align-items: center;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: bold;
   padding-bottom: 30px;
+}
+
+span[name="addCoName"] {
+  padding-left: 5px;
+  border-left: 3px solid black;
 }
 
 .sidebarTitle {
@@ -78,7 +78,7 @@ body {
   grid-column: 2/3;
   grid-row:1/2;
   display:grid;
-  grid-template-rows: 1fr 2fr 1fr;
+  grid-template-rows: 1fr max-content 1fr;
   margin-right: 10px;
 
 }
@@ -125,7 +125,7 @@ body {
 }
 
 .pageMain--costBox-title {
-  font-size: var(--fsM);
+  font-size: 12px;
   font-weight: bold;
   padding-bottom: 10px;
   text-transform: uppercase;
@@ -137,7 +137,7 @@ body {
   width: 250px;
   padding: 10px 10px;
   text-align: center;
-  font-size: var(--fsCost);
+  font-size: 18px;
 }
 
 .pageMain__text {
@@ -147,8 +147,7 @@ body {
   margin: 0 15px 0 5px;
   line-height: 1.4;
   font-family: Georgia, 'Times New Roman', Times, serif;
-  font-size: 16px;
-  justify-content: center;
+  font-size: 14px;
 }
 
 .pageMain__text > p:first-child {
@@ -198,14 +197,13 @@ body {
 .footer__logo {
   grid-column: 2/3;
   display: flex;
-  display: flex;
   align-items: center;
+  padding-left: 20px;
 }
 
 .footer_middle {
   padding-top: 5px;
   padding-left: 10px;
-  text-align: center;
   display: flex;
   align-items: center;
   font-size: 14px;

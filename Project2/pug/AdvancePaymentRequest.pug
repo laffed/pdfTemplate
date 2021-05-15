@@ -20,31 +20,31 @@ html(lang="en")
 
           div
             p(class="sidebarTitle") Policy
-            span Add Policy Number
+            span(name="addPolicyNumber") Add Policy Number
 
           div
             p(class="sidebarTitle") Date of loss
-            span Add Loss Date State
+            span(name="dateOfLoss") Add Loss Date State
 
           div
             p(class="sidebarTitle") Loss address
-            span 1701 Enterprise Way, Mobile, 36606 
+            span(name="lossAddress") 1701 Enterprise Way, Mobile, 36606 
 
           div()
             p(class="sidebarTitle") Adjuster
-            span Add Adjuster Name
+            span(name="adjusterName") Add Adjuster Name
 
           div()
             p(class="sidebarTitle") Work
-            span 021242 212341
+            span(name="workNumber") 021242 212341
 
           div()
             p(class="sidebarTitle") Mobile
-            span 021242 212341
+            span(name="mobileNumber") 021242 212341
           
           div()
             p(class="sidebarTitle") Adjuster FCN
-            span Number
+            span(name="adjusterFCN") Number
 
       main(class="pageMain")
         section(class="pageMain__header")
@@ -58,15 +58,15 @@ html(lang="en")
           div(class="pageMain__header--costs")
             div 
               p(class="pageMain--costBox-title") Contents advance:
-              span(class="pageMain--costBox") $1 000 222222000.00
+              span(class="pageMain--costBox" name="contentsAdvance") $1 000 222222000.00
 
             div
               p(class="pageMain--costBox-title") Building advance:
-              span(class="pageMain--costBox") $205.354.12
+              span(class="pageMain--costBox" name="buildingAdvance") $205.354.12
 
         section(class="pageMain__text")
           p.
-            This agreement acknowledges you have sustained a loss on the above date at the above address. Demo Company agrees to advance you $0.00 against the final payment of your loss. It is understood by you, that the investigation of your loss is not complete at this time. It may be established after the investigation of your loss, that Selective Insurance Company SE has no legal obligation for payment of your claim. If it is determined your claim is not a valid claim under your insurance policy, you agree to reimburse the $0.00 advanced to you. Issuance of an advance payment by us is not an admission of liability on our part. Acceptance by you does not represent a satisfaction or release of all claims. 
+            This agreement acknowledges you have sustained a loss on the above date at the above address. #[span(name="inlineComplany") Demo Company] agrees to advance you $0.00 against the final payment of your loss. It is understood by you, that the investigation of your loss is not complete at this time. It may be established after the investigation of your loss, that Selective Insurance Company SE has no legal obligation for payment of your claim. If it is determined your claim is not a valid claim under your insurance policy, you agree to reimburse the $0.00 advanced to you. Issuance of an advance payment by us is not an admission of liability on our part. Acceptance by you does not represent a satisfaction or release of all claims. 
           
           p.
             This is not a PROOF OF LOSS as required by the policy. A PROOF OF LOSS must still be submitted to the company within sixty (60) days of the date of loss, as stated in your policy. This agreement or payment of this advance is not intended to change or modify any of the conditions, terms, provisions, or requirements contained in the policy. Any obligations or legal rights which may now or hereafter be available to you or the company are reserved. 
@@ -74,16 +74,18 @@ html(lang="en")
         section(class="pageMain__footer")
           div(class="pageMain__footer--col")
             div(class="pageMain__footer--col-txt")
-              span() Insured signature
-              span() 3/1/2021
+              span Insured signature
+              span 3/1/2021
             div(class="signatureBox")
+              span(name="insuredSignature") Test Signature
 
 
           div(class="pageMain__footer--col")
             div(class="pageMain__footer--col-txt")
-              span() Adjuster signature 
-              span() 3/1/2021
+              span Adjuster signature 
+              span 3/1/2021
             div(class="signatureBox")
+              span(name="adjusterSignature") Test Signature
 
       footer(class="pageFooter")
         div(class="footer_left")
@@ -95,7 +97,7 @@ html(lang="en")
             span AL 36606 251-471-4718, ext. 5
 
         div(class="footer__logo")
-          <svg id="logo_cnc" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 151.46 52.47"><path d="M92.77,20a15.65,15.65,0,0,0-7.65-2C77.74,18,72.8,23,72.8,30.37s5.4,12.45,13.52,12.45a16.33,16.33,0,0,0,8.2-2.3l-1.29,5.16a35.93,35.93,0,0,1-6.87.65C75.2,46.33,67.82,40,67.82,30.46s7.43-16,18.4-16a30.15,30.15,0,0,1,6,.6Z" transform="translate(-1.49 -0.01)"/><path d="M97.8,42.24V18.74c0-1.94-.46-3-1.61-3.78h5.48L119,35.51v-17c0-1.94-.36-2.77-1.61-3.55h6.87c-1.2.78-1.61,1.61-1.61,3.55V46.3l-21.22-25v21c0,1.89.42,2.77,1.62,3.51H96.19C97.43,45,97.8,44.13,97.8,42.24Z" transform="translate(-1.49 -0.01)"/><path d="M151.19,20a15.65,15.65,0,0,0-7.65-2c-7.38,0-12.32,4.94-12.32,12.36s5.4,12.45,13.52,12.45a16.39,16.39,0,0,0,8.21-2.3l-1.3,5.16a35.93,35.93,0,0,1-6.87.65c-11.16,0-18.54-6.32-18.54-15.87s7.43-16,18.4-16a30.15,30.15,0,0,1,6,.6Z" transform="translate(-1.49 -0.01)"/><path d="M29.92,29.63c4.46-5.16,6-11.66,15.81-12.36-9.72-1.6-13.18,4.29-17.81,8.82.07.15.14.3.22.44C28.7,27.63,29.3,28.6,29.92,29.63Z" transform="translate(-1.49 -0.01)"/><path d="M45.54,28.14C37.14,39.74,29.52,54.31,16,48l-.52-.6c3.47,4.42,9.74,7.15,17.38,3.28,12.76-6.81,16.54-26.28,29.7-27.09C62.22,23,51.6,20.74,45.54,28.14Z" transform="translate(-1.49 -0.01)"/><path d="M32.71,35.74h0A9.73,9.73,0,0,1,33,38.32v.78C40.39,32,38.82,22,53.2,20.15,40.12,18.8,37,26.86,31.6,32.83a25.49,25.49,0,0,1,1.09,2.91Z" transform="translate(-1.49 -0.01)"/><path d="M37.79,15.57C32,15.1,28.84,17.82,26,20.9c.29,1,.58,1.92.87,2.72C29.17,19.9,31.36,16.35,37.79,15.57Z" transform="translate(-1.49 -0.01)"/><path d="M22.38,47c-8.07,0-9.7-7.21-8.67-10.75,2.55-8.49,6-7.1,8.67-25.81,2.47,19,6.12,17.32,8.78,25.81C32.13,39.74,30.67,47,22.38,47Z" transform="translate(-1.49 -0.01)"/><path d="M15.55,11.74C12.83,6.24,15,3,15.2,0c-3.88,3.3-8.29,5.9-6.78,10.65.78,2.44,2,3,2.53,5.79,1.29,7.29-6.85,10-2.76,18.29C1.48,26.6,11.34,19.51,6.49,14.4c-.44,4.5-5,11.08-5,15.7,0,5.14,4.27,11.2,12.83,16.54a29.65,29.65,0,0,1-3.13-5.85c-1.58-5.31,1.92-8.88,3.51-12.13C18.85,20.48,17.76,16.21,15.55,11.74Z" transform="translate(-1.49 -0.01)"/></svg>
+          <svg height="50px" width="146px" id="logo_cnc" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 151.46 52.47"><path d="M92.77,20a15.65,15.65,0,0,0-7.65-2C77.74,18,72.8,23,72.8,30.37s5.4,12.45,13.52,12.45a16.33,16.33,0,0,0,8.2-2.3l-1.29,5.16a35.93,35.93,0,0,1-6.87.65C75.2,46.33,67.82,40,67.82,30.46s7.43-16,18.4-16a30.15,30.15,0,0,1,6,.6Z" transform="translate(-1.49 -0.01)"/><path d="M97.8,42.24V18.74c0-1.94-.46-3-1.61-3.78h5.48L119,35.51v-17c0-1.94-.36-2.77-1.61-3.55h6.87c-1.2.78-1.61,1.61-1.61,3.55V46.3l-21.22-25v21c0,1.89.42,2.77,1.62,3.51H96.19C97.43,45,97.8,44.13,97.8,42.24Z" transform="translate(-1.49 -0.01)"/><path d="M151.19,20a15.65,15.65,0,0,0-7.65-2c-7.38,0-12.32,4.94-12.32,12.36s5.4,12.45,13.52,12.45a16.39,16.39,0,0,0,8.21-2.3l-1.3,5.16a35.93,35.93,0,0,1-6.87.65c-11.16,0-18.54-6.32-18.54-15.87s7.43-16,18.4-16a30.15,30.15,0,0,1,6,.6Z" transform="translate(-1.49 -0.01)"/><path d="M29.92,29.63c4.46-5.16,6-11.66,15.81-12.36-9.72-1.6-13.18,4.29-17.81,8.82.07.15.14.3.22.44C28.7,27.63,29.3,28.6,29.92,29.63Z" transform="translate(-1.49 -0.01)"/><path d="M45.54,28.14C37.14,39.74,29.52,54.31,16,48l-.52-.6c3.47,4.42,9.74,7.15,17.38,3.28,12.76-6.81,16.54-26.28,29.7-27.09C62.22,23,51.6,20.74,45.54,28.14Z" transform="translate(-1.49 -0.01)"/><path d="M32.71,35.74h0A9.73,9.73,0,0,1,33,38.32v.78C40.39,32,38.82,22,53.2,20.15,40.12,18.8,37,26.86,31.6,32.83a25.49,25.49,0,0,1,1.09,2.91Z" transform="translate(-1.49 -0.01)"/><path d="M37.79,15.57C32,15.1,28.84,17.82,26,20.9c.29,1,.58,1.92.87,2.72C29.17,19.9,31.36,16.35,37.79,15.57Z" transform="translate(-1.49 -0.01)"/><path d="M22.38,47c-8.07,0-9.7-7.21-8.67-10.75,2.55-8.49,6-7.1,8.67-25.81,2.47,19,6.12,17.32,8.78,25.81C32.13,39.74,30.67,47,22.38,47Z" transform="translate(-1.49 -0.01)"/><path d="M15.55,11.74C12.83,6.24,15,3,15.2,0c-3.88,3.3-8.29,5.9-6.78,10.65.78,2.44,2,3,2.53,5.79,1.29,7.29-6.85,10-2.76,18.29C1.48,26.6,11.34,19.51,6.49,14.4c-.44,4.5-5,11.08-5,15.7,0,5.14,4.27,11.2,12.83,16.54a29.65,29.65,0,0,1-3.13-5.85c-1.58-5.31,1.92-8.88,3.51-12.13C18.85,20.48,17.76,16.21,15.55,11.74Z" transform="translate(-1.49 -0.01)"/></svg>
 
           div(class="footer_middle") Catastrophe & National Claims
 
