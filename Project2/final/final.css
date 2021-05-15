@@ -28,6 +28,7 @@ height: 29.7cm;
 margin: 0 auto;
 margin-top: 0.5cm;
 margin-bottom: 1cm;
+border: 2px solid black;
 }
 
 .pageSidebar {
@@ -47,7 +48,7 @@ grid-row: 1/5;
 display: grid;
 gap:10px;
 grid-template-rows:auto;
-padding-top:93px;
+padding-top:55px;
 }
 
 .pageSidebar__top > div {
@@ -79,7 +80,7 @@ padding-bottom: 5px;
 grid-column: 2/3;
 grid-row: 1/2;
 display: grid;
-grid-template-rows: 51.55px repeat(3, max-content);
+grid-template-rows: 51.55px max-content;
 margin-right: 10px;
 }
 
@@ -92,49 +93,34 @@ align-items: center;
 justify-content: center;
 }
 
+.pageMain__header--tile {padding-bottom: 15px;}
 .pageMain__header--tile p::first-letter {
 font-size: 30px;
 }
 
-.pageMain__subHeader {
+.pageMain__text {
 display: flex;
 flex-direction: column;
 justify-content: center;
-padding-top:40px;
-font-size:14px;
-
-}
-
-.pageMain__subHeader > div {
-padding-bottom: 5px;
-}
-
-.pageMain__adjuster {
-display: flex;
-flex-direction: column;
-justify-content: center;
+text-align: justify;
 font-size: 13px;
 }
 
-.pageMain__engineer {font-size:13px}
-
-
-.pageMain__adjuster {padding: 25px 0;}
-
-.pageMain__adjuster > div, .pageMain__engineer > * {padding-bottom: 5px;}
+.pageMain__text > div:not(:last-child) {
+padding-bottom: 10px;
+}
 
 ol li {
 list-style: decimal;
 list-style-position: inside;
 }
 
-ul li {
-list-style: disc;
-list-style-position: inside;
-}
-
 ol li::marker {
 font-weight: bold;
+}
+
+ol > div > span {
+padding-left: 15px;
 }
 
 .pageFooter {
@@ -144,7 +130,6 @@ display: grid;
 grid-template-columns: repeat(3, 1fr);
 align-content: center;
 justify-items: center;
-
 }
 
 .footer__logo {
