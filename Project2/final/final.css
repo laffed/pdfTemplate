@@ -6,13 +6,11 @@
 --fsXL: 25px;
 }
 
-
 *, *::before, *::after {
 box-sizing: border-box;
 margin: 0;
 padding:0;
 }
-
 
 body {
 font-family: Arial, Helvetica, sans-serif;
@@ -28,7 +26,6 @@ height: 29.7cm;
 margin: 0 auto;
 margin-top: 0.5cm;
 margin-bottom: 1cm;
-border: 2px solid black;
 }
 
 .pageSidebar {
@@ -36,19 +33,22 @@ grid-column: 1/2;
 grid-row:1/2;
 
 display:grid;
-grid-template-rows: repeat(6,1fr);
+grid-template-rows: 150px repeat(5,1fr);
 text-align: left;
 font-size:12px;
 padding-right:20px;
 padding-left:10px;
 }
 
+.logoTop {
+display: flex;
+}
+
 .pageSidebar__top {
-grid-row: 1/5;
+grid-row: 2/6;
 display: grid;
 gap:10px;
 grid-template-rows:auto;
-padding-top:55px;
 }
 
 .pageSidebar__top > div {
@@ -61,21 +61,22 @@ display: flex;
 align-items: center;
 font-size: 16px;
 font-weight: bold;
-padding-bottom: 30px;
+padding-top: 30px;
 }
 
 span[name="addCoName"] {
 padding-left: 5px;
-border-left: 3px solid black;
+border-left: 3px solid #2d516d;
+color: #335c7d;
 }
 
 .sidebarTitle {
 font-size:14px;
-font-weight: bold;
+font-weight: 900;
 text-transform: uppercase;
 padding-bottom: 5px;
+color: #335c7d;
 }
-
 .pageMain {
 grid-column: 2/3;
 grid-row: 1/2;
@@ -93,10 +94,7 @@ align-items: center;
 justify-content: center;
 }
 
-.pageMain__header--tile {padding-bottom: 15px;}
-.pageMain__header--tile p::first-letter {
-font-size: 30px;
-}
+.pageMain__header--tile {color:#335c7d ;padding-bottom: 15px;}
 
 .pageMain__text {
 display: flex;
